@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Yellow Bricks — Interior & Joinery Contractor</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="images/yb-logo.png">
+  <meta name="description" content="Bahrain-based interior decoration firm providing design, planning, approvals, turnkey fit-out, joinery, MEP, and home cinemas.">
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="Yellow Bricks home">
+      <img src="images/yb-logo.png" alt="Yellow Bricks Logo" class="logo-img"><span class="brand-name">YELLOW <span class="bricks">BRICKS</span></span>
+    </a>
+    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="menu" aria-label="Primary">
+      <a href="index.html" class="active">Home</a>
+      <a href="services.html" class="">Services</a>
+      <a href="about.html" class="">About</a>
+      <a href="projects.html" class="">Projects</a>
+      <a href="contact.html" class="cta ">Contact</a>
+    </nav>
+  </div>
+</header>
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('.menu');
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    menu.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', menu.classList.contains('open'));
+  });
+  // Close menu when clicking on a link
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menuToggle.classList.remove('active');
+      menu.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+<section class="hero">
+  <div class="container hero-inner">
+    <div>
+      <span class="badge">Interior &amp; Joinery Contractor</span>
+      <h1 class="hero-heading">Modern living and office spaces that charm hearts and minds.</h1>
+      <p class="lead-paragraph">We deliver design, planning, drawings & approvals, turnkey fit-out, MEP, and custom joinery — with professional excellence and on-time completion.</p>
+      <div class="hero-stats">
+        <div class="stat"><b>24/7</b> Support</div>
+        <div class="stat"><b>ISO</b> 9001:2015</div>
+        <div class="stat"><b>100%</b> Satisfaction</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>What we do</h2>
+    <p class="sub">From design to delivery — a single partner for your interior transformation.</p>
+    <div class="grid">
+      <article class="card clickable-card" onclick="scrollToService('designing')">
+        <img src="images/pexels-fotoaibe-1571460 (1).jpg" alt="Interior Design" class="home-service-image">
+        <h3>Designing & Space Planning</h3>
+        <p>We translate your needs into spatial concepts and detailed plans ready for build.</p>
+      </article>
+      <article class="card clickable-card" onclick="scrollToService('turnkey')">
+        <img src="images/pexels-polina-zimmerman-3778619.jpg" alt="Turnkey Fit-out" class="home-service-image">
+        <h3>Turnkey Fit-out</h3>
+        <p>End‑to‑end execution across residential, retail, and commercial spaces.</p>
+      </article>
+      <article class="card clickable-card" onclick="scrollToService('joinery')">
+        <img src="images/pexels-shvetsa-5711879.jpg" alt="Custom Joinery" class="home-service-image">
+        <h3>Joinery</h3>
+        <p>Handcrafted custom woodwork that blends beauty with durability.</p>
+      </article>
+      <article class="card clickable-card" onclick="scrollToService('cinemas')">
+        <img src="images/view-3d-cinema-theatre-room.jpg" alt="Home Cinema" class="home-service-image">
+        <h3>Home Cinemas</h3>
+        <p>Immersive audio‑visual systems, acoustics, seating, and aftercare.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--tint)">
+  <div class="container">
+    <h2>Featured Projects</h2>
+    <p class="sub">A glimpse of our residential, commercial, and home cinema works.</p>
+    <div class="projects">
+      <a href="projects.html#home-interiors" class="project">
+        <img src="images/E-BROCHURE YB.pdf-image-052.jpg" alt="Contemporary home interior" class="project-thumb">
+        <div class="body"><h3>Home Interiors</h3><p class="meta">Residential • Design & Fit‑out</p></div>
+      </a>
+      <a href="projects.html#wooden-doors" class="project">
+        <img src="images/E-BROCHURE YB.pdf-image-033.png" alt="Bespoke wooden doors" class="project-thumb">
+        <div class="body"><h3>Wooden Doors</h3><p class="meta">Custom Joinery • Solid Wood</p></div>
+      </a>
+      <a href="projects.html#offices" class="project">
+        <img src="images/E-BROCHURE YB.pdf-image-074.png" alt="Office interior workspace" class="project-thumb">
+        <div class="body"><h3>Offices</h3><p class="meta">Commercial • Space Planning</p></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--tint)">
+  <div class="container">
+    <h2>Get In Touch</h2>
+    <p class="sub">Ready to transform your space? Let's discuss your project and bring your vision to life.</p>
+    <div class="contact-form-container">
+      <div class="form">
+        <h3>Send us a Message</h3>
+        <form action="mailto:yellowbricksbh@gmail.com" method="post" enctype="text/plain" novalidate>
+          <div class="form-group">
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name" required autocomplete="name" aria-describedby="name-help">
+          </div>
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required autocomplete="email" aria-describedby="email-help">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" aria-describedby="phone-help">
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" autocomplete="off" aria-describedby="subject-help">
+          </div>
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" rows="5" required aria-describedby="message-help"></textarea>
+          </div>
+          <button type="submit" class="cta">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-brand">
+      <div class="brand-centered">
+        <img src="images/yb-logo.png" alt="Yellow Bricks Logo" class="logo-img">
+        <span class="brand-name">YELLOW <span class="bricks">BRICKS</span></span>
+      </div>
+      <p class="small">ISO 9001:2015 Certified • Focused • Competent • Inspired</p>
+    </div>
+    <div class="footer-sections">
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <p>Office #13, Bldg #4127, Road #1173, Tubli, Kingdom of Bahrain</p>
+        <p>+973 3361 9608 • +973 3352 2197 • +973 7791 2500</p>
+      </div>
+      <div class="footer-section">
+        <h4>Social</h4>
+        <p><a href="#" aria-label="Instagram @theyellowbriks">@theyellowbriks</a></p>
+        <p><a href="https://wa.me/97333619608" target="_blank">WhatsApp</a></p>
+        <p><a href="mailto:yellowbricksbh@gmail.com">yellowbricksbh@gmail.com</a></p>
+      </div>
+      <div class="footer-section">
+        <h4>About</h4>
+        <p><a href="about.html">Our Story</a></p>
+        <p><a href="services.html">Services</a></p>
+        <p><a href="projects.html">Projects</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom-copyright">
+      <p class="small">© <span id="year"></span> Yellow Bricks Co WLL. All rights reserved.</p>
+    </div>
+  </div>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    function scrollToService(serviceType) {
+      // Navigate to services page with hash
+      window.location.href = 'services.html#' + serviceType;
+    }
+  </script>
+  
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/97333619608" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+    </svg>
+  </a>
+</footer>
+</body>
+</html>
