@@ -845,3 +845,104 @@ body {
   .badge { font-size: 11px; padding: 5px 8px; }
   .tag { font-size: 11px; padding: 3px 8px; }
 }
+
+/* Enhanced responsive styles for all pages */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .container { max-width: 90%; }
+  
+  /* Services page tablet */
+  .service-card { 
+    gap: 40px; 
+    padding: 50px 0;
+  }
+  .service-image { 
+    height: 350px;
+    width: 100%;
+  }
+  
+  /* Projects page tablet */
+  .project-gallery { 
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+    gap: 14px; 
+  }
+  
+  /* About page tablet */
+  .about-hero .hero-inner {
+    padding: 50px 0;
+  }
+}
+
+/* Enhanced mobile styles for all pages */
+@media (max-width: 768px) {
+  /* Services page mobile */
+  .services-grid { gap: 40px; }
+  .service-card { 
+    padding: 30px 0;
+    gap: 20px;
+  }
+  .service-image { 
+    height: 250px;
+    width: 100%;
+  }
+  
+  /* Projects page mobile */
+  .project-gallery { 
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+    gap: 12px; 
+  }
+  .project-gallery img { 
+    height: 180px; 
+  }
+  
+  /* Contact form mobile */
+  .contact-form-container { 
+    padding: 20px; 
+  }
+  .form { 
+    padding: 20px; 
+  }
+  
+  /* About page mobile */
+  .about-hero .hero-inner {
+    padding: 40px 0;
+  }
+  
+  /* Home page mobile */
+  .home-service-image {
+    height: 150px;
+  }
+}
+
+/* Small mobile devices enhanced */
+@media (max-width: 480px) {
+  /* Services page small mobile */
+  .service-card { 
+    padding: 20px 0;
+    gap: 15px;
+  }
+  .service-image { 
+    height: 200px;
+  }
+  
+  /* Projects page small mobile */
+  .project-gallery { 
+    grid-template-columns: 1fr; 
+    gap: 10px; 
+  }
+  .project-gallery img { 
+    height: 150px; 
+  }
+  
+  /* Contact form small mobile */
+  .contact-form-container { 
+    padding: 15px; 
+  }
+  .form { 
+    padding: 15px; 
+  }
+  
+  /* Home page small mobile */
+  .home-service-image {
+    height: 120px;
+  }
+}
