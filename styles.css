@@ -879,6 +879,16 @@ body {
   .service-card { 
     padding: 30px 0;
     gap: 20px;
+    grid-template-columns: 1fr;
+  }
+  .service-card.reverse {
+    grid-template-columns: 1fr;
+  }
+  .service-card.reverse .service-content { 
+    order: 1; 
+  }
+  .service-card.reverse .service-image { 
+    order: 2; 
   }
   .service-image { 
     height: 250px;
@@ -919,6 +929,16 @@ body {
   .service-card { 
     padding: 20px 0;
     gap: 15px;
+    grid-template-columns: 1fr;
+  }
+  .service-card.reverse {
+    grid-template-columns: 1fr;
+  }
+  .service-card.reverse .service-content { 
+    order: 1; 
+  }
+  .service-card.reverse .service-image { 
+    order: 2; 
   }
   .service-image { 
     height: 200px;
