@@ -45,17 +45,152 @@
     });
   });
 </script>
-<section class="hero">
-  <div class="container hero-inner">
-    <div>
-      <span class="badge">Interior &amp; Joinery Contractor</span>
-      <h1 class="hero-heading">Modern living and office spaces that charm hearts and minds.</h1>
-      <p class="lead-paragraph">We deliver design, planning, drawings & approvals, turnkey fit-out, MEP, and custom joinery — with professional excellence and on-time completion.</p>
-      <div class="hero-stats">
-        <div class="stat"><b>24/7</b> Support</div>
-        <div class="stat"><b>ISO</b> 9001:2015</div>
-        <div class="stat"><b>100%</b> Satisfaction</div>
-      </div>
+
+<script>
+  // Hero Banner Auto-Cycle
+  document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.hero-slide');
+    let currentSlide = 0;
+    
+    function showSlide(index) {
+      // Remove active class from all slides
+      slides.forEach(slide => slide.classList.remove('active'));
+      
+      // Add active class to current slide
+      slides[index].classList.add('active');
+    }
+    
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+    
+    // Start the auto-cycle (6 seconds per slide)
+    setInterval(nextSlide, 6000);
+    
+    // Initialize first slide
+    showSlide(0);
+    
+    // Add click handlers to hero buttons
+    const heroButtons = document.querySelectorAll('.hero-cta');
+    heroButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const slide = this.closest('.hero-slide');
+        const category = slide.getAttribute('data-category');
+        
+        // Redirect to projects page with corresponding section
+        if (category === 'office') {
+          window.location.href = 'projects.html#offices';
+        } else if (category === 'cinema') {
+          window.location.href = 'projects.html#home-cinemas';
+        } else if (category === 'interiors') {
+          window.location.href = 'projects.html#home-interiors';
+        }
+      });
+    });
+    
+    // Add click handlers to overlapping cards
+    const overlappingCards = document.querySelectorAll('.overlapping-card');
+    overlappingCards.forEach(card => {
+      card.addEventListener('click', function() {
+        const category = this.getAttribute('data-category');
+        
+        // Redirect to projects page with corresponding section
+        if (category === 'office') {
+          window.location.href = 'projects.html#offices';
+        } else if (category === 'cinema') {
+          window.location.href = 'projects.html#home-cinemas';
+        } else if (category === 'doors') {
+          window.location.href = 'projects.html#wooden-doors';
+        } else if (category === 'interiors') {
+          window.location.href = 'projects.html#home-interiors';
+        }
+      });
+    });
+  });
+</script>
+<section class="hero-banner">
+  <div class="hero-slide active" data-category="office">
+    <div class="hero-background" style="background-image: url('images/hero-banner/3d-rendering-luxury-business-meeting-working-room-executive-office (1).jpg');"></div>
+    <div class="hero-content">
+      <h1 class="hero-heading">Where Productivity Meets Style</h1>
+      <button class="hero-cta">Explore Office Designs</button>
+    </div>
+  </div>
+  
+  <div class="hero-slide" data-category="office">
+    <div class="hero-background" style="background-image: url('images/hero-banner/luxury-working-room-executive-office.jpg');"></div>
+    <div class="hero-content">
+      <h1 class="hero-heading">Transform Your Workspace, Inspire Your Team</h1>
+      <button class="hero-cta">Explore Office Designs</button>
+    </div>
+  </div>
+  
+  <div class="hero-slide" data-category="cinema">
+    <div class="hero-background" style="background-image: url('images/hero-banner/modern-bedroom-with-luxury-decor-illuminated-with-electric-lamp-generative-ai.jpg');"></div>
+    <div class="hero-content">
+      <h1 class="hero-heading">Bring the Big Screen Experience Home</h1>
+      <button class="hero-cta">Discover Home Cinema</button>
+    </div>
+  </div>
+  
+  <div class="hero-slide" data-category="cinema">
+    <div class="hero-background" style="background-image: url('images/hero-banner/luxury-movie-theater-with-modern-design-lighting-generated-by-ai.jpg');"></div>
+    <div class="hero-content">
+      <h1 class="hero-heading">Your Private Theater Awaits</h1>
+      <button class="hero-cta">Discover Home Cinema</button>
+    </div>
+  </div>
+  
+  <div class="hero-slide" data-category="interiors">
+    <div class="hero-background" style="background-image: url('images/hero-banner/bedroom-5664221.jpg');"></div>
+    <div class="hero-content">
+      <h1 class="hero-heading">Beautiful Spaces, Made for Living</h1>
+      <button class="hero-cta">Start Your Interior Journey</button>
+    </div>
+  </div>
+  
+  <div class="hero-slide" data-category="interiors">
+    <div class="hero-background" style="background-image: url('images/hero-banner/pexels-dropshado-2251247.jpg');"></div>
+    <div class="hero-content">
+      <h1 class="hero-heading">Design That Reflects Your Lifestyle</h1>
+      <button class="hero-cta">Start Your Interior Journey</button>
+    </div>
+  </div>
+</section>
+
+<!-- Overlapping Cards Section -->
+<section class="overlapping-cards-section">
+  <div class="container">
+    <div class="overlapping-cards">
+      <article class="overlapping-card" data-category="office">
+        <img src="images/E-BROCHURE YB.pdf-image-074.png" alt="Office Interior" class="overlapping-card-image">
+        <div class="overlapping-card-content">
+          <h3>Office</h3>
+          <p>Professional workspace design and fit-out solutions</p>
+        </div>
+      </article>
+      <article class="overlapping-card" data-category="cinema">
+        <img src="images/view-3d-cinema-theatre-room.jpg" alt="Home Cinema" class="overlapping-card-image">
+        <div class="overlapping-card-content">
+          <h3>Home Cinema</h3>
+          <p>Immersive audio-visual entertainment spaces</p>
+        </div>
+      </article>
+      <article class="overlapping-card" data-category="doors">
+        <img src="images/E-BROCHURE YB.pdf-image-033.png" alt="Wooden Doors" class="overlapping-card-image">
+        <div class="overlapping-card-content">
+          <h3>Wooden Doors</h3>
+          <p>Custom crafted solid wood door solutions</p>
+        </div>
+      </article>
+      <article class="overlapping-card" data-category="interiors">
+        <img src="images/E-BROCHURE YB.pdf-image-052.jpg" alt="Home Interiors" class="overlapping-card-image">
+        <div class="overlapping-card-content">
+          <h3>Home Interiors</h3>
+          <p>Beautiful residential interior transformations</p>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -157,20 +292,29 @@
     <div class="footer-sections">
       <div class="footer-section">
         <h4>Contact</h4>
-        <p>Office #13, Bldg #4127, Road #1173, Tubli, Kingdom of Bahrain</p>
-        <p>+973 3361 9608 • +973 3352 2197 • +973 7791 2500</p>
+        <p class="small">Office #13, Bldg #4127, Road #1173, Tubli, Kingdom of Bahrain</p>
+        <p class="small">+973 3361 9608</p>
+        <p class="small">+973 3352 2197</p>
+        <p class="small">+973 7791 2500</p>
       </div>
       <div class="footer-section">
         <h4>Social</h4>
-        <p><a href="#" aria-label="Instagram @theyellowbriks">@theyellowbriks</a></p>
-        <p><a href="https://wa.me/97333619608" target="_blank">WhatsApp</a></p>
-        <p><a href="mailto:yellowbricksbh@gmail.com">yellowbricksbh@gmail.com</a></p>
+        <p class="small"><a href="#" aria-label="Instagram @theyellowbriks">@theyellowbriks</a></p>
+        <p class="small"><a href="https://wa.me/97333619608" target="_blank">WhatsApp</a></p>
+        <p class="small"><a href="mailto:yellowbricksbh@gmail.com">yellowbricksbh@gmail.com</a></p>
       </div>
       <div class="footer-section">
         <h4>About</h4>
-        <p><a href="about.html">Our Story</a></p>
-        <p><a href="services.html">Services</a></p>
-        <p><a href="projects.html">Projects</a></p>
+        <p class="small"><a href="about.html">Our Story</a></p>
+        <p class="small"><a href="services.html">Services</a></p>
+        <p class="small"><a href="projects.html">Projects</a></p>
+      </div>
+      <div class="footer-section">
+        <h4>Projects</h4>
+        <p class="small"><a href="projects.html#wooden-doors">Wooden Doors</a></p>
+        <p class="small"><a href="projects.html#home-interiors">Home Interiors</a></p>
+        <p class="small"><a href="projects.html#home-cinemas">Home Cinemas</a></p>
+        <p class="small"><a href="projects.html#offices">Office Interiors</a></p>
       </div>
     </div>
     <div class="footer-bottom-copyright">
