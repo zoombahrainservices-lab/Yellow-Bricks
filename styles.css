@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 :root {
   --brand: #FFCC00;
@@ -16,7 +17,7 @@
   /* Typography Scale */
   --font-primary: 'Lato', system-ui, -apple-system, sans-serif;
   --font-secondary: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-display: 'Playfair Display', serif;
+  --font-display: 'Poppins', sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -165,7 +166,7 @@ body {
 }
 
 .hero-heading {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Poppins', sans-serif;
   font-size: clamp(32px, 4vw, 56px);
   font-weight: 900;
   line-height: 1.1;
@@ -318,7 +319,7 @@ body {
   width: 100%;
 }
 .hero h1 { 
-  font-family: 'Playfair Display', serif;
+  font-family: 'Poppins', sans-serif;
   font-size: clamp(32px, 4vw, 56px); 
   line-height: 1.1; 
   margin: 0 0 30px; 
@@ -329,9 +330,9 @@ body {
 
 /* All page hero headings - same style as mission & vision */
 .about-page-hero h1 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Poppins', sans-serif;
   font-size: clamp(32px, 4vw, 56px);
-  font-weight: 900;
+  font-weight: 700;
   line-height: 1.1;
   margin-bottom: 20px;
   color: var(--ink);
@@ -348,8 +349,8 @@ body {
   padding: 22px; border: 1px solid rgba(0,0,0,0.1);
 }
 .hero-card h3 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 900;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
   font-size: clamp(20px, 2.5vw, 28px);
   line-height: 1.1;
 }
@@ -365,10 +366,10 @@ body {
   background: var(--paper); color: var(--ink); border-radius: 12px; padding: 14px; border: 1px solid #eee; text-align: center; 
 }
 .stat b { 
-  font-family: 'Playfair Display', serif;
+  font-family: 'Poppins', sans-serif;
   font-size: clamp(20px, 2.5vw, 28px); 
   display: block; 
-  font-weight: 900;
+  font-weight: 700;
   line-height: 1.1;
 }
 
@@ -418,9 +419,9 @@ body {
 }
 
 .overlapping-card-content h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Poppins', sans-serif;
   font-size: clamp(18px, 2.2vw, 24px);
-  font-weight: 900;
+  font-weight: 600;
   margin: 0 0 8px;
   color: var(--ink);
   line-height: 1.1;
@@ -442,10 +443,10 @@ body {
   margin-top: 50px;
 }
 .section h2 { 
-  font-family: 'Playfair Display', serif;
+  font-family: 'Poppins', sans-serif;
   font-size: clamp(32px, 4vw, 56px); 
   margin: 0 0 30px; 
-  font-weight: 900;
+  font-weight: 700;
   line-height: 1.1;
 }
 .section p.sub { 
@@ -481,9 +482,9 @@ body {
   border-color: var(--brand);
 }
 .card h3 { 
-  font-family: 'Playfair Display', serif;
+  font-family: 'Poppins', sans-serif;
   margin-top: 8px; 
-  font-weight: 900;
+  font-weight: 600;
   font-size: clamp(16px, 2vw, 22px);
   line-height: 1.1;
 }
@@ -537,11 +538,11 @@ body {
   padding: 20px 0; 
 }
 .service-content h3 { 
-  font-family: 'Playfair Display', serif;
+  font-family: 'Poppins', sans-serif;
   font-size: clamp(24px, 3vw, 36px); 
   margin-bottom: 16px; 
   color: var(--ink);
-  font-weight: 900;
+  font-weight: 700;
   line-height: 1.1;
 }
 .service-content p { 
@@ -592,9 +593,9 @@ body {
 /* Project Sections */
 .project-section { margin: 40px 0; }
 .project-section h3 { 
-  font-family: 'Playfair Display', serif;
+  font-family: 'Poppins', sans-serif;
   font-size: clamp(24px, 3vw, 36px); 
-  font-weight: 900; 
+  font-weight: 700; 
   margin-bottom: 24px; 
   color: var(--ink);
   text-align: center;
@@ -781,7 +782,7 @@ body {
 }
 
 .vision-mission-content h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Poppins', sans-serif;
   font-size: clamp(32px, 4vw, 56px);
   font-weight: 900;
   line-height: 1.1;
