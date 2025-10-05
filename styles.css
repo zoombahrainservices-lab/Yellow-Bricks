@@ -47,14 +47,11 @@ body {
   font-weight: 900; 
   letter-spacing: 0.5px; 
   color: var(--ink);
-  font-size: 20px;
+  font-size: 28px;
 }
 
 .brand-name .bricks {
   color: #dc2626;
-  font-weight: 900;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-  letter-spacing: 0.8px;
 }
 .menu { display: flex; gap: 14px; flex-wrap: wrap; }
 .menu a {
@@ -1295,7 +1292,7 @@ body {
   
   /* Navigation */
   .nav { padding: 12px 0; position: relative; }
-  .brand-name { font-size: 16px; }
+  .brand-name { font-size: 22px; }
   .logo { width: 40px; height: 40px; }
   .logo-img { width: 40px; height: 40px; }
   
@@ -1480,7 +1477,7 @@ body {
   .section h2 { font-size: clamp(20px, 2.5vw, 28px); }
   .specialty-image { height: 120px; margin-bottom: 10px; }
   
-  .brand-name { font-size: 14px; letter-spacing: 0.3px; }
+  .brand-name { font-size: 20px; letter-spacing: 0.3px; }
   .logo { width: 36px; height: 36px; }
   .logo-img { width: 36px; height: 36px; }
   
@@ -1499,7 +1496,7 @@ body {
   
   /* Header large tablet */
   .nav { padding: 18px 0; }
-  .brand-name { font-size: 19px; }
+  .brand-name { font-size: 25px; }
   .logo, .logo-img { width: 46px; height: 46px; }
   .menu { gap: 16px; }
   .menu a { padding: 8px 12px; font-size: 15px; }
@@ -1520,7 +1517,7 @@ body {
   
   /* Header tablet */
   .nav { padding: 16px 0; }
-  .brand-name { font-size: 18px; }
+  .brand-name { font-size: 24px; }
   .logo, .logo-img { width: 44px; height: 44px; }
   .menu { gap: 12px; }
   .menu a { padding: 6px 10px; font-size: 14px; }
