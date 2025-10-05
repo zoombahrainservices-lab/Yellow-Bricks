@@ -50,7 +50,7 @@
     <div class="form">
       <h2>Contact us</h2>
       <p class="sub">Tell us about your project and we'll get back to you.</p>
-      <form action="mailto:yellowbricksbh@gmail.com" method="post" enctype="text/plain">
+      <form id="contactForm" novalidate>
         <label for="name">Name</label>
         <input id="name" name="name" autocomplete="name" required placeholder="Your full name" aria-describedby="name-help">
         <label for="email">Email</label>
@@ -65,7 +65,7 @@
     <aside class="info">
       <h2>Contact info</h2>
       <p><strong>Phone:</strong> +973 3361 9608 • +973 3352 2197 • +973 7791 2500</p>
-      <p><strong>Email:</strong> <a href="mailto:yellowbricksbh@gmail.com">yellowbricksbh@gmail.com</a></p>
+      <p><strong>Email:</strong> <a href="#" onclick="copyEmail()">yellowbricksbh@gmail.com</a></p>
       <p><strong>Address:</strong> Office #13, Bldg #4127, Road #1173, Tubli, Kingdom of Bahrain</p>
       <div style="margin-top:12px;">
         <iframe class="map" loading="lazy"
@@ -95,9 +95,9 @@
       </div>
       <div class="footer-section">
         <h4>Social</h4>
-        <p class="small"><a href="#" aria-label="Instagram @theyellowbriks">@theyellowbriks</a></p>
+        <p class="small"><a href="https://instagram.com/theyellowbriks" target="_blank" aria-label="Instagram @theyellowbriks">Instagram</a></p>
         <p class="small"><a href="https://wa.me/97333619608" target="_blank">WhatsApp</a></p>
-        <p class="small"><a href="mailto:yellowbricksbh@gmail.com">yellowbricksbh@gmail.com</a></p>
+        <p class="small"><a href="#" onclick="copyEmail()">yellowbricksbh@gmail.com</a></p>
       </div>
       <div class="footer-section">
         <h4>About</h4>
@@ -118,6 +118,46 @@
     </div>
   </div>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    // Handle contact form submission
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form data
+      const formData = new FormData(this);
+      const name = formData.get('name');
+      const email = formData.get('email');
+      const phone = formData.get('phone');
+      const message = formData.get('message');
+      
+      // Create mailto link with form data
+      const mailtoLink = `mailto:yellowbricksbh@gmail.com?subject=${encodeURIComponent('Contact Form Submission')}&body=${encodeURIComponent(
+        `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`
+      )}`;
+      
+      // Open email client
+      window.location.href = mailtoLink;
+    });
+    
+    // Copy email to clipboard function
+    function copyEmail() {
+      const email = 'yellowbricksbh@gmail.com';
+      navigator.clipboard.writeText(email).then(function() {
+        // Show a brief success message
+        const link = event.target;
+        const originalText = link.textContent;
+        link.textContent = 'Copied!';
+        link.style.color = 'var(--brand)';
+        setTimeout(() => {
+          link.textContent = originalText;
+          link.style.color = '';
+        }, 2000);
+      }).catch(function(err) {
+        // Fallback: open mailto if clipboard fails
+        window.location.href = 'mailto:' + email;
+      });
+    }
+  </script>
   
   <!-- WhatsApp Floating Button -->
   <a href="https://wa.me/97333619608" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">

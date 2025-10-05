@@ -159,9 +159,9 @@
       </div>
       <div class="footer-section">
         <h4>Social</h4>
-        <p class="small"><a href="#" aria-label="Instagram @theyellowbriks">@theyellowbriks</a></p>
+        <p class="small"><a href="https://instagram.com/theyellowbriks" target="_blank" aria-label="Instagram @theyellowbriks">Instagram</a></p>
         <p class="small"><a href="https://wa.me/97333619608" target="_blank">WhatsApp</a></p>
-        <p class="small"><a href="mailto:yellowbricksbh@gmail.com">yellowbricksbh@gmail.com</a></p>
+        <p class="small"><a href="#" onclick="copyEmail()">yellowbricksbh@gmail.com</a></p>
       </div>
       <div class="footer-section">
         <h4>About</h4>
@@ -182,6 +182,26 @@
     </div>
   </div>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    // Copy email to clipboard function
+    function copyEmail() {
+      const email = 'yellowbricksbh@gmail.com';
+      navigator.clipboard.writeText(email).then(function() {
+        // Show a brief success message
+        const link = event.target;
+        const originalText = link.textContent;
+        link.textContent = 'Copied!';
+        link.style.color = 'var(--brand)';
+        setTimeout(() => {
+          link.textContent = originalText;
+          link.style.color = '';
+        }, 2000);
+      }).catch(function(err) {
+        // Fallback: open mailto if clipboard fails
+        window.location.href = 'mailto:' + email;
+      });
+    }
+  </script>
   
   <!-- WhatsApp Floating Button -->
   <a href="https://wa.me/97333619608" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">

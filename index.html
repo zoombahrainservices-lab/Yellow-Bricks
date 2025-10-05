@@ -201,7 +201,7 @@
     <p class="sub">From design to delivery — a single partner for your interior transformation.</p>
     <div class="grid">
       <article class="card clickable-card" onclick="scrollToService('designing')">
-        <img src="images/pexels-fotoaibe-1571460 (1).jpg" alt="Interior Design" class="home-service-image">
+        <img src="images/pexels-jeshoots-com-147458-834892.jpg" alt="Interior Design" class="home-service-image">
         <h3>Designing & Space Planning</h3>
         <p>We translate your needs into spatial concepts and detailed plans ready for build.</p>
       </article>
@@ -252,7 +252,7 @@
     <div class="contact-form-container">
       <div class="form">
         <h3>Send us a Message</h3>
-        <form action="mailto:yellowbricksbh@gmail.com" method="post" enctype="text/plain" novalidate>
+        <form id="contactForm" novalidate>
           <div class="form-group">
             <label for="name">Name *</label>
             <input type="text" id="name" name="name" required autocomplete="name" aria-describedby="name-help">
@@ -299,9 +299,9 @@
       </div>
       <div class="footer-section">
         <h4>Social</h4>
-        <p class="small"><a href="#" aria-label="Instagram @theyellowbriks">@theyellowbriks</a></p>
+        <p class="small"><a href="https://instagram.com/theyellowbriks" target="_blank" aria-label="Instagram @theyellowbriks">Instagram</a></p>
         <p class="small"><a href="https://wa.me/97333619608" target="_blank">WhatsApp</a></p>
-        <p class="small"><a href="mailto:yellowbricksbh@gmail.com">yellowbricksbh@gmail.com</a></p>
+        <p class="small"><a href="#" onclick="copyEmail()">yellowbricksbh@gmail.com</a></p>
       </div>
       <div class="footer-section">
         <h4>About</h4>
@@ -326,6 +326,46 @@
     function scrollToService(serviceType) {
       // Navigate to services page with hash
       window.location.href = 'services.html#' + serviceType;
+    }
+    
+    // Handle contact form submission
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form data
+      const formData = new FormData(this);
+      const name = formData.get('name');
+      const email = formData.get('email');
+      const phone = formData.get('phone');
+      const subject = formData.get('subject');
+      const message = formData.get('message');
+      
+      // Create mailto link with form data
+      const mailtoLink = `mailto:yellowbricksbh@gmail.com?subject=${encodeURIComponent(subject || 'Contact Form Submission')}&body=${encodeURIComponent(
+        `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`
+      )}`;
+      
+      // Open email client
+      window.location.href = mailtoLink;
+    });
+    
+    // Copy email to clipboard function
+    function copyEmail() {
+      const email = 'yellowbricksbh@gmail.com';
+      navigator.clipboard.writeText(email).then(function() {
+        // Show a brief success message
+        const link = event.target;
+        const originalText = link.textContent;
+        link.textContent = 'Copied!';
+        link.style.color = 'var(--brand)';
+        setTimeout(() => {
+          link.textContent = originalText;
+          link.style.color = '';
+        }, 2000);
+      }).catch(function(err) {
+        // Fallback: open mailto if clipboard fails
+        window.location.href = 'mailto:' + email;
+      });
     }
   </script>
   
