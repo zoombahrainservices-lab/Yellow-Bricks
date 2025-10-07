@@ -144,8 +144,36 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2));
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3));
   z-index: 2;
+}
+
+/* Enhanced overlay for interior category slides */
+.hero-slide[data-category="interiors"] .hero-background::before {
+  background: linear-gradient(
+    135deg, 
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.3) 30%,
+    rgba(0, 0, 0, 0.4) 70%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+}
+
+/* Additional overlay layer for interior slides - creates depth */
+.hero-slide[data-category="interiors"] .hero-background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 204, 0, 0.1) 0%,
+    transparent 50%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  z-index: 3;
 }
 
 .hero-content {
@@ -221,7 +249,7 @@ body {
 
 .hero-slide[data-category="interiors"] .hero-heading {
   color: white;
-  text-shadow: none;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 /* Hero Background Animation */
