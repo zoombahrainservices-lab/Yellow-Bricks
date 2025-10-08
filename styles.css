@@ -25,16 +25,45 @@ body {
   color: var(--ink);
   background: var(--paper);
   line-height: 1.6;
+  padding-top: 0;
 }
 
 .container { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
 
+/* Ensure first non-hero section has proper spacing */
+.section:first-of-type {
+  margin-top: 80px;
+}
+
+/* Hero sections should start at the top */
+.hero-banner,
+.hero-section,
+.about-page-hero,
+.about-hero-section,
+.services-hero-section,
+.projects-hero-section {
+  margin-top: 0 !important;
+}
+
 /* Header / Nav */
 .header {
-  position: sticky; top: 0; z-index: 50;
-  background: rgba(255,255,255,0.85);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: transparent;
+  backdrop-filter: none;
+  border-bottom: none;
+  transition: all 0.3s ease;
+  box-shadow: none;
+}
+
+.header.scrolled {
+  background: var(--charcoal);
   backdrop-filter: saturate(180%) blur(10px);
-  border-bottom: 1px solid #444;
+  border-bottom: 1px solid rgba(255, 147, 13, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 .nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 14px 0; }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
@@ -54,7 +83,7 @@ body {
 .menu { display: flex; gap: 8px; flex-wrap: wrap; }
 .menu a {
   font-family: 'Outfit', sans-serif;
-  text-decoration: none; color: var(--ink); font-weight: 700; padding: 6px 10px; border-radius: 8px; transition: background .2s, color .2s; font-size: 14px;
+  text-decoration: none; color: var(--ink); font-weight: 400; padding: 6px 10px; border-radius: 8px; transition: background .2s, color .2s; font-size: 14px;
 }
 .menu a:hover { background: var(--tint); }
 .menu a.active { color: var(--paper); background: var(--ink); }
@@ -77,7 +106,7 @@ body {
   font-family: 'Outfit', sans-serif;
   text-decoration: none; 
   color: var(--ink); 
-  font-weight: 700; 
+  font-weight: 400; 
   padding: 6px 10px; 
   border-radius: 8px; 
   transition: background .2s, color .2s; 
@@ -175,6 +204,7 @@ body {
   position: relative;
   height: calc(70vh + 100px);
   overflow: hidden;
+  margin-top: 0;
   border-bottom: 1px solid #444;
 }
 
