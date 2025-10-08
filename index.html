@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Yellow Bricks — Interior & Joinery Contractor</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/png" href="images/yb-logo.png">
+  <link rel="icon" type="image/png" href="images/yb-logo-removebg-preview.png">
   <meta name="description" content="Bahrain-based interior decoration firm providing design, planning, approvals, turnkey fit-out, joinery, MEP, and home cinemas.">
 </head>
 <body>
 <header class="header">
   <div class="container nav">
     <a class="brand" href="index.html" aria-label="Yellow Bricks home">
-      <img src="images/yb-logo.png" alt="Yellow Bricks Logo" class="logo-img"><span class="brand-name">YELLOW <span class="bricks">BRICKS</span></span>
+      <img src="images/yb-logo-removebg-preview.png" alt="Yellow Bricks Logo" class="logo-img"><span class="brand-name">YELLOW <span class="bricks">BRICKS</span></span>
     </a>
     <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span>
@@ -21,7 +21,13 @@
     </button>
     <nav class="menu" aria-label="Primary">
       <a href="index.html" class="active">Home</a>
-      <a href="services.html" class="">Services</a>
+      <div class="dropdown">
+        <a href="services.html" class="dropdown-toggle">Services</a>
+        <div class="dropdown-menu">
+          <a href="wooden-doors.html">Wooden Doors</a>
+          <a href="home-cinemas.html">Home Cinemas</a>
+        </div>
+      </div>
       <a href="about.html" class="">About</a>
       <a href="projects.html" class="">Projects</a>
       <a href="contact.html" class="cta ">Contact</a>
@@ -42,6 +48,29 @@
       menuToggle.classList.remove('active');
       menu.classList.remove('open');
       menuToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+  
+  // Dropdown functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const dropdowns = document.querySelectorAll('.dropdown');
+    
+    dropdowns.forEach(dropdown => {
+      const toggle = dropdown.querySelector('.dropdown-toggle');
+      const menu = dropdown.querySelector('.dropdown-menu');
+      
+      // Desktop hover behavior
+      dropdown.addEventListener('mouseenter', () => {
+        menu.style.opacity = '1';
+        menu.style.visibility = 'visible';
+        menu.style.transform = 'translateY(0)';
+      });
+      
+      dropdown.addEventListener('mouseleave', () => {
+        menu.style.opacity = '0';
+        menu.style.visibility = 'hidden';
+        menu.style.transform = 'translateY(-10px)';
+      });
     });
   });
 </script>
@@ -178,7 +207,7 @@
         </div>
       </article>
       <article class="overlapping-card" data-category="cinema">
-        <img src="images/view-3d-cinema-theatre-room.jpg" alt="Home Cinema" class="overlapping-card-image">
+        <img src="images/HC/HC-2R1 (1).jpg" alt="Home Cinema" class="overlapping-card-image">
         <div class="overlapping-card-content">
           <h3>Home Cinema</h3>
           <p>Immersive audio-visual entertainment spaces</p>
@@ -216,7 +245,7 @@
         <p>Handcrafted custom woodwork that blends beauty with durability.</p>
       </article>
       <article class="card clickable-card" onclick="scrollToService('cinemas')">
-        <img src="images/view-3d-cinema-theatre-room.jpg" alt="Home Cinema" class="home-service-image">
+        <img src="images/HC/HC-2R1 (1).jpg" alt="Home Cinema" class="home-service-image">
         <h3>Home Cinemas</h3>
         <p>Immersive audio‑visual systems, acoustics, seating, and aftercare.</p>
       </article>
@@ -240,6 +269,10 @@
       <a href="projects.html#offices" class="project">
         <img src="images/E-BROCHURE YB.pdf-image-074.png" alt="Office interior workspace" class="project-thumb">
         <div class="body"><h3>Offices</h3><p class="meta">Commercial • Space Planning</p></div>
+      </a>
+      <a href="projects.html#home-cinemas" class="project">
+        <img src="images/HC/HC-2R1 (1).jpg" alt="Luxury home cinema" class="project-thumb">
+        <div class="body"><h3>Home Cinemas</h3><p class="meta">Audio-Visual • Luxury Theater</p></div>
       </a>
     </div>
   </div>
@@ -284,7 +317,7 @@
   <div class="container">
     <div class="footer-brand">
       <div class="brand-centered">
-        <img src="images/yb-logo.png" alt="Yellow Bricks Logo" class="logo-img">
+        <img src="images/yb-logo-removebg-preview.png" alt="Yellow Bricks Logo" class="logo-img">
         <span class="brand-name">YELLOW <span class="bricks">BRICKS</span></span>
       </div>
       <p class="small">ISO 9001:2015 Certified • Focused • Competent • Inspired</p>
@@ -315,6 +348,13 @@
         <p class="small"><a href="projects.html#offices">Office Interiors</a></p>
         <p class="small"><a href="projects.html#home-cinemas">Home Cinemas</a></p>
         <p class="small"><a href="projects.html#wooden-doors">Wooden Doors</a></p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <p class="small"><a href="home-cinemas.html">Home Cinemas</a></p>
+        <p class="small"><a href="wooden-doors.html">Wooden Doors</a></p>
+        <p class="small"><a href="contact.html">Contact Us</a></p>
+        <p class="small"><a href="https://wa.me/97333619608" target="_blank">WhatsApp</a></p>
       </div>
     </div>
     <div class="footer-bottom-copyright">

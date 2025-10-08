@@ -5,13 +5,195 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>About — Yellow Bricks</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/png" href="images/yb-logo.png">
+  <link rel="icon" type="image/png" href="images/yb-logo-removebg-preview.png">
+  <style>
+    .about-hero-section {
+      width: 100%;
+      height: calc(50vh + 200px);
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url('images/Office/IMG-20251007-WA0028.jpg');
+      background-size: cover;
+      background-position: center bottom;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      padding: 0 2rem;
+    }
+    
+    .about-hero-section .hero-content {
+      display: flex !important;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      height: auto;
+      color: white !important;
+      z-index: 10;
+      text-align: left;
+      padding: 2rem;
+      position: relative;
+      opacity: 1 !important;
+      transform: none !important;
+      visibility: visible !important;
+      max-width: 800px;
+      margin-left: 200px;
+    }
+    
+    .about-hero-section .hero-top {
+      margin-bottom: 0.5rem;
+      z-index: 11;
+      position: relative;
+    }
+    
+    .about-hero-section .hero-top h1 {
+      font-size: 4rem !important;
+      margin: 0;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+      font-weight: 800 !important;
+      color: #FFFFFF !important;
+      position: relative;
+      z-index: 12;
+      display: block !important;
+      white-space: nowrap;
+    }
+    
+    .about-hero-section .hero-description {
+      margin-top: 0.5rem;
+      z-index: 11;
+      position: relative;
+    }
+    
+    .about-hero-section .hero-description p {
+      font-size: 1.2rem;
+      margin: 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+      color: #FFFFFF;
+      line-height: 1.6;
+      max-width: 100%;
+    }
+    
+    /* Hero Contact Box */
+    .hero-contact-box {
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 16px;
+      padding: 2.5rem;
+      max-width: 500px;
+      text-align: center;
+      color: white;
+      z-index: 10;
+      position: relative;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      margin-right: 200px;
+      margin-left: 300px;
+    }
+    
+    .hero-contact-box h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: white;
+    }
+    
+    .hero-contact-box p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .hero-contact-box .buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+    
+    .hero-contact-box .btn {
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .hero-contact-box .btn.contact {
+      background: var(--brand);
+      color: white;
+      border: 2px solid var(--brand);
+    }
+    
+    .hero-contact-box .btn.contact:hover {
+      background: transparent;
+      color: var(--brand);
+      border-color: var(--brand);
+    }
+    
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+      .about-hero-section {
+        height: calc(40vh + 150px);
+        background-attachment: scroll; /* Disable parallax on mobile for better performance */
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+      }
+      .about-hero-section .hero-content {
+        margin-left: 0;
+      }
+      .about-hero-section .hero-top h1 {
+        font-size: 2.8rem !important;
+        margin: 0;
+        white-space: nowrap;
+      }
+      .about-hero-section .hero-description p {
+        font-size: 1rem;
+        margin: 0;
+        text-align: center;
+        max-width: 100%;
+      }
+      .hero-contact-box {
+        max-width: 350px;
+        padding: 1.5rem;
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .about-hero-section {
+        height: calc(35vh + 100px);
+        background-attachment: scroll; /* Disable parallax on mobile for better performance */
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.5rem;
+        padding: 1rem;
+      }
+      .about-hero-section .hero-top h1 {
+        font-size: 2.2rem !important;
+        margin: 0;
+        white-space: nowrap;
+      }
+      .about-hero-section .hero-description p {
+        font-size: 0.9rem;
+        margin: 0;
+        text-align: center;
+        max-width: 100%;
+      }
+      .hero-contact-box {
+        max-width: 300px;
+        padding: 1.2rem;
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+  </style>
 </head>
 <body>
 <header class="header">
   <div class="container nav">
     <a class="brand" href="index.html" aria-label="Yellow Bricks home">
-      <img src="images/yb-logo.png" alt="Yellow Bricks Logo" class="logo-img"><span class="brand-name">YELLOW <span class="bricks">BRICKS</span></span>
+      <img src="images/yb-logo-removebg-preview.png" alt="Yellow Bricks Logo" class="logo-img"><span class="brand-name">YELLOW <span class="bricks">BRICKS</span></span>
     </a>
     <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span>
@@ -20,7 +202,13 @@
     </button>
     <nav class="menu" aria-label="Primary">
       <a href="index.html" class="">Home</a>
-      <a href="services.html" class="">Services</a>
+      <div class="dropdown">
+        <a href="services.html" class="dropdown-toggle">Services</a>
+        <div class="dropdown-menu">
+          <a href="wooden-doors.html">Wooden Doors</a>
+          <a href="home-cinemas.html">Home Cinemas</a>
+        </div>
+      </div>
       <a href="about.html" class="active">About</a>
       <a href="projects.html" class="">Projects</a>
       <a href="contact.html" class="cta ">Contact</a>
@@ -43,12 +231,44 @@
       menuToggle.setAttribute('aria-expanded', 'false');
     });
   });
+  
+  // Dropdown functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const dropdowns = document.querySelectorAll('.dropdown');
+    
+    dropdowns.forEach(dropdown => {
+      const toggle = dropdown.querySelector('.dropdown-toggle');
+      const menu = dropdown.querySelector('.dropdown-menu');
+      
+      // Desktop hover behavior
+      dropdown.addEventListener('mouseenter', () => {
+        menu.style.opacity = '1';
+        menu.style.visibility = 'visible';
+        menu.style.transform = 'translateY(0)';
+      });
+      
+      dropdown.addEventListener('mouseleave', () => {
+        menu.style.opacity = '0';
+        menu.style.visibility = 'hidden';
+        menu.style.transform = 'translateY(-10px)';
+      });
+    });
+  });
   </script>
-<section class="about-page-hero">
-  <div class="container hero-inner">
-    <div>
+<section class="about-hero-section">
+  <div class="hero-content">
+    <div class="hero-top">
       <h1>About Yellow Bricks</h1>
-      <p class="lead">Yellow Bricks Co. WLL is a Bahrain-based interior design firm dedicated to creating modern living and office spaces that inspire and impress. With a passionate team of designers and architects, we transform ideas into reality by blending creativity, functionality, and innovation. Our work spans from concept to completion, ensuring every detail reflects the unique needs and personality of our clients. Whether it's a residential project or a corporate environment, we deliver designs that are both stylish and practical. By combining craftsmanship with forward-thinking solutions, we create spaces that leave a lasting impression. At Yellow Bricks Co., every project is a journey toward redefining the way people live and work.</p>
+    </div>
+    <div class="hero-description">
+      <p>Yellow Bricks Co. WLL is a Bahrain-based interior design firm dedicated to creating modern living and office spaces that inspire and impress. With a passionate team of designers and architects, we transform ideas into reality by blending creativity, functionality, and innovation.</p>
+    </div>
+  </div>
+  <div class="hero-contact-box">
+    <h2>Contact Us Today</h2>
+    <p>Don't hesitate and send us a message.</p>
+    <div class="buttons">
+      <a href="contact.html" class="btn contact">Contact Now</a>
     </div>
   </div>
 </section>
@@ -108,7 +328,7 @@
   <div class="container">
     <div class="vision-mission-grid">
       <div class="vision-mission-image">
-        <img src="images/HC/HC-5 (1).jpg" alt="Luxury Home Cinema" class="vision-image">
+        <img src="images/HC/HC-2R1 (1).jpg" alt="Luxury Home Cinema" class="vision-image">
       </div>
       <div class="vision-mission-content">
         <h2>Home Cinemas</h2>
@@ -184,7 +404,7 @@
         <p>Spaces that attract, engage, and deliver results.</p>
       </article>
       <article class="card">
-        <img src="images/view-3d-cinema-theatre-room.jpg" alt="Home Cinemas" class="specialty-image">
+        <img src="images/HC/HC-4.jpg" alt="Home Cinemas" class="specialty-image">
         <h3>Home Cinemas</h3>
         <p>Bespoke entertainment environments, fully customized.</p>
       </article>
@@ -229,7 +449,7 @@
   <div class="container">
     <div class="footer-brand">
       <div class="brand-centered">
-        <img src="images/yb-logo.png" alt="Yellow Bricks Logo" class="logo-img">
+        <img src="images/yb-logo-removebg-preview.png" alt="Yellow Bricks Logo" class="logo-img">
         <span class="brand-name">YELLOW <span class="bricks">BRICKS</span></span>
       </div>
       <p class="small">ISO 9001:2015 Certified • Focused • Competent • Inspired</p>
@@ -262,6 +482,13 @@
         <p class="small"><a href="projects.html#home-interiors">Home Interiors</a></p>
         <p class="small"><a href="projects.html#home-cinemas">Home Cinemas</a></p>
         <p class="small"><a href="projects.html#offices">Office Interiors</a></p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <p class="small"><a href="home-cinemas.html">Home Cinemas</a></p>
+        <p class="small"><a href="wooden-doors.html">Wooden Doors</a></p>
+        <p class="small"><a href="contact.html">Contact Us</a></p>
+        <p class="small"><a href="https://wa.me/97333619608" target="_blank">WhatsApp</a></p>
       </div>
     </div>
     <div class="footer-bottom-copyright">

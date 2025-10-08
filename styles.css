@@ -1,30 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
 
 :root {
-  --brand: #FFCC00;
-  --ink: #111111;
-  --charcoal: #1F1F1F;
+  --brand: #ff930d;
+  --ink: #FFFFFF;
+  --charcoal: #1b1b1b;
   --stone: #2A2A2A;
-  --muted: #6C757D;
-  --paper: #FFFFFF;
-  --tint: #F8F9FA;
+  --muted: #B0B0B0;
+  --paper: #1b1b1b;
+  --tint: #2A2A2A;
   --radius: 14px;
   --maxw: 1100px;
   
   /* Typography Scale */
-  --font-primary: 'Lato', system-ui, -apple-system, sans-serif;
-  --font-secondary: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-display: 'Poppins', sans-serif;
+  --font-primary: 'Outfit', system-ui, -apple-system, sans-serif;
+  --font-secondary: 'Outfit', system-ui, -apple-system, sans-serif;
+  --font-display: 'Outfit', sans-serif;
 }
 
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 
 body {
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  font-family: 'Outfit', sans-serif;
   color: var(--ink);
   background: var(--paper);
   line-height: 1.6;
@@ -37,14 +34,14 @@ body {
   position: sticky; top: 0; z-index: 50;
   background: rgba(255,255,255,0.85);
   backdrop-filter: saturate(180%) blur(10px);
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #444;
 }
 .nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 14px 0; }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
 .logo { width: 48px; height: 48px; border-radius: 8px; background: var(--brand); border: 2px solid var(--ink); display: inline-block; }
 .logo-img { width: 48px; height: 48px; border-radius: 8px; object-fit: contain; }
 .brand-name { 
-  font-family: 'Lato', system-ui, -apple-system, sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-weight: 900; 
   letter-spacing: 0.5px; 
   color: var(--ink);
@@ -54,19 +51,92 @@ body {
 .brand-name .bricks {
   color: #dc2626;
 }
-.menu { display: flex; gap: 14px; flex-wrap: wrap; }
+.menu { display: flex; gap: 8px; flex-wrap: wrap; }
 .menu a {
-  font-family: 'Lato', system-ui, -apple-system, sans-serif;
-  text-decoration: none; color: var(--ink); font-weight: 700; padding: 8px 12px; border-radius: 10px; transition: background .2s, color .2s;
+  font-family: 'Outfit', sans-serif;
+  text-decoration: none; color: var(--ink); font-weight: 700; padding: 6px 10px; border-radius: 8px; transition: background .2s, color .2s; font-size: 14px;
 }
 .menu a:hover { background: var(--tint); }
 .menu a.active { color: var(--paper); background: var(--ink); }
 .cta {
-  font-family: 'Lato', system-ui, -apple-system, sans-serif;
+  font-family: 'Outfit', sans-serif;
   background: var(--brand); color: var(--ink); border: none;
-  padding: 8px 14px; border-radius: 12px; text-decoration: none; font-weight: 700;
+  padding: 6px 12px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 14px;
 }
 .cta:hover { filter: brightness(0.98); }
+
+/* Dropdown Menu */
+.dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-toggle {
+  position: relative;
+  font-family: 'Outfit', sans-serif;
+  text-decoration: none; 
+  color: var(--ink); 
+  font-weight: 700; 
+  padding: 6px 10px; 
+  border-radius: 8px; 
+  transition: background .2s, color .2s; 
+  font-size: 14px;
+}
+
+.dropdown-toggle::after {
+  content: '▼';
+  font-size: 10px;
+  margin-left: 6px;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-toggle:hover {
+  background: var(--tint);
+}
+
+.dropdown:hover .dropdown-toggle::after {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(27,27,27,0.98);
+  backdrop-filter: saturate(180%) blur(10px);
+  border: 1px solid #444;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  min-width: 160px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  padding: 8px 0;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 8px 16px;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+  border-radius: 0;
+}
+
+.dropdown-menu a:hover {
+  background: var(--tint);
+}
 
 /* Mobile menu toggle button */
 .menu-toggle {
@@ -105,7 +175,7 @@ body {
   position: relative;
   height: calc(70vh + 100px);
   overflow: hidden;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #444;
 }
 
 .hero-slide {
@@ -134,6 +204,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   z-index: 1;
 }
 
@@ -194,7 +265,7 @@ body {
 }
 
 .hero-heading {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: clamp(32px, 4vw, 56px);
   font-weight: 900;
   line-height: 1.1;
@@ -208,7 +279,7 @@ body {
   border: none;
   padding: 16px 32px;
   border-radius: 12px;
-  font-family: 'Lato', system-ui, -apple-system, sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-weight: 700;
   font-size: 16px;
   cursor: pointer;
@@ -319,18 +390,19 @@ body {
 .about-page-hero {
   position: relative;
   min-height: 50vh;
-  background: #FFF8DC;
+  background: #2A2A2A;
   overflow: visible;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #444;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 40px 0;
 }
 
+
 /* Override any inherited hero styles for about page */
 .about-page-hero {
-  background-color: #FFF8DC !important;
+  background-color: #2A2A2A !important;
   background-image: none !important;
   animation: none !important;
 }
@@ -347,7 +419,7 @@ body {
   width: 100%;
 }
 .hero h1 { 
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: clamp(32px, 4vw, 56px); 
   line-height: 1.1; 
   margin: 0 0 30px; 
@@ -358,7 +430,7 @@ body {
 
 /* All page hero headings - same style as mission & vision */
 .about-page-hero h1 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: clamp(32px, 4vw, 56px);
   font-weight: 700;
   line-height: 1.1;
@@ -377,24 +449,24 @@ body {
   padding: 22px; border: 1px solid rgba(0,0,0,0.1);
 }
 .hero-card h3 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-weight: 700;
   font-size: clamp(20px, 2.5vw, 28px);
   line-height: 1.1;
 }
 .badge { 
-  font-family: 'Lato', system-ui, -apple-system, sans-serif;
+  font-family: 'Outfit', sans-serif;
   display: inline-block; font-size: 12px; padding: 6px 10px; border-radius: 999px; background: var(--brand); color: var(--ink); font-weight: 700; border: none; 
   text-shadow: none;
 }
 
 .hero-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-top: 14px; }
 .stat { 
-  font-family: 'Lato', system-ui, -apple-system, sans-serif;
+  font-family: 'Outfit', sans-serif;
   background: var(--paper); color: var(--ink); border-radius: 12px; padding: 14px; border: 1px solid #eee; text-align: center; 
 }
 .stat b { 
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: clamp(20px, 2.5vw, 28px); 
   display: block; 
   font-weight: 700;
@@ -424,7 +496,7 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  border: 1px solid #eee;
+  border: 1px solid #444;
   position: relative;
   z-index: 5;
   display: flex;
@@ -432,8 +504,8 @@ body {
 }
 
 .overlapping-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-12px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
 }
 
 .overlapping-card-image {
@@ -447,7 +519,7 @@ body {
 }
 
 .overlapping-card-content h3 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: clamp(18px, 2.2vw, 24px);
   font-weight: 600;
   margin: 0 0 8px;
@@ -471,14 +543,14 @@ body {
   margin-top: 50px;
 }
 .section h2 { 
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: clamp(32px, 4vw, 56px); 
   margin: 0 0 30px; 
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.1;
 }
 .section p.sub { 
-  font-family: 'Lato', system-ui, -apple-system, sans-serif;
+  font-family: 'Outfit', sans-serif;
   color: var(--muted); margin-top: 0; 
   font-weight: 400;
 }
@@ -486,7 +558,7 @@ body {
 /* Cards grid */
 .grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 .card { 
-  border: 1px solid #eee; 
+  border: 1px solid #444; 
   border-radius: 14px; 
   padding: 18px; 
   background: var(--paper);
@@ -494,8 +566,8 @@ body {
   cursor: pointer;
 }
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.25);
   border-color: var(--brand);
 }
 
@@ -510,7 +582,7 @@ body {
   border-color: var(--brand);
 }
 .card h3 { 
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Outfit', sans-serif;
   margin-top: 8px; 
   font-weight: 600;
   font-size: clamp(16px, 2vw, 22px);
@@ -533,40 +605,58 @@ body {
   transform: scale(1.05);
 }
 
-/* Services grid */
-.services-grid { display: flex; flex-direction: column; gap: 60px; }
+/* Services grid - For services.html page only */
+.services-grid { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 60px; 
+}
 .service-card { 
   display: grid; 
   grid-template-columns: 1fr 1fr; 
   gap: 60px; 
   align-items: center; 
   padding: 60px 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #444;
+  transition: all 0.3s ease;
 }
-.service-card:last-child { border-bottom: none; }
-.service-card.reverse { grid-template-columns: 1fr 1fr; }
-.service-card.reverse .service-content { order: 1; }
-.service-card.reverse .service-image { order: 2; }
+.service-card:last-child { 
+  border-bottom: none; 
+}
+.service-card.reverse { 
+  grid-template-columns: 1fr 1fr; 
+}
+.service-card.reverse .service-content { 
+  order: 1; 
+}
+.service-card.reverse .service-image { 
+  order: 2; 
+}
 
 .service-image { 
   height: 300px; 
-  width: 500px;
+  width: 100%;
   border-radius: 14px; 
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
 }
 .service-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 14px;
+  transition: transform 0.3s ease;
 }
 
 .service-content { 
-  padding: 20px 0; 
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .service-content h3 { 
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: clamp(24px, 3vw, 36px); 
   margin-bottom: 16px; 
   color: var(--ink);
@@ -579,10 +669,22 @@ body {
   color: var(--muted);
 }
 
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.02);
+}
+.service-card:hover .service-image {
+  transform: scale(1.02);
+}
+.service-card:hover .service-image img {
+  transform: scale(1.05);
+}
+
 /* Projects */
-.projects { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.projects { display: grid; gap: 18px; grid-template-columns: repeat(4, 1fr); }
 .project { 
-  border: 1px solid #eee; 
+  border: 1px solid #444; 
   border-radius: 14px; 
   overflow: hidden; 
   background: var(--paper);
@@ -593,10 +695,10 @@ body {
 }
 .project:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.25);
   border-color: var(--brand);
 }
-.project .thumb { background: linear-gradient(135deg, var(--brand), #ffe680); height: 160px; }
+.project .thumb { background: linear-gradient(135deg, var(--brand), #ffb366); height: 160px; }
 .project .body { padding: 16px; }
 .project .meta { color: var(--muted); font-size: 14px; }
 
@@ -621,7 +723,7 @@ body {
 /* Project Sections */
 .project-section { margin: 40px 0; }
 .project-section h3 { 
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: clamp(24px, 3vw, 36px); 
   font-weight: 700; 
   margin-bottom: 24px; 
@@ -665,36 +767,48 @@ body {
 }
 
 .project-gallery img:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
 }
 
-/* Solid Doors - zoom in to fill cards better (images have transparent padding) */
-.project-section#solid-doors .project-gallery img {
-  object-fit: cover;
-  object-position: center;
-  width: 100%;
+/* Wooden Doors Sections - Use same structure as projects page */
+.project-section#solid-doors .project-gallery img,
+.project-section#flush-doors .project-gallery img,
+.project-section#grooved-doors .project-gallery img,
+.project-section#carved-doors .project-gallery img {
+  flex: 0 0 calc(25% - 12px); /* 4 cards per row, accounting for gap */
+  width: calc(25% - 12px);
   height: 200px;
+  object-fit: cover;
   border-radius: 12px;
-  transform: scale(1.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
-/* Flush Doors - standard crop to fill cards */
-.project-section#flush-doors .project-gallery img {
-  object-fit: cover;
-  object-position: center;
-  width: 100%;
-  height: 200px;
-  border-radius: 12px;
+.project-section#solid-doors .project-gallery img:hover,
+.project-section#flush-doors .project-gallery img:hover,
+.project-section#grooved-doors .project-gallery img:hover,
+.project-section#carved-doors .project-gallery img:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
 }
 
-/* Grooved Doors - standard crop to fill cards */
-.project-section#grooved-doors .project-gallery img {
-  object-fit: cover;
-  object-position: center;
-  width: 100%;
+/* Home Cinemas Sections - Use same structure as projects page */
+.project-section#home-cinemas-main .project-gallery img,
+.project-section#home-cinemas-latest .project-gallery img {
+  flex: 0 0 calc(25% - 12px); /* 4 cards per row, accounting for gap */
+  width: calc(25% - 12px);
   height: 200px;
+  object-fit: cover;
   border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.project-section#home-cinemas-main .project-gallery img:hover,
+.project-section#home-cinemas-latest .project-gallery img:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
 }
 
 /* Door Subsections Styling */
@@ -703,7 +817,7 @@ body {
 }
 
 .door-subsection h4 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: clamp(20px, 2.5vw, 28px);
   font-weight: 600;
   margin-bottom: 20px;
@@ -844,12 +958,16 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: center;
+  transition: transform 0.3s ease;
+}
+.vision-mission-grid:hover {
+  transform: translateY(-2px);
 }
 
 .vision-mission-content h2 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: clamp(32px, 4vw, 56px);
-  font-weight: 900;
+  font-weight: 500;
   line-height: 1.1;
   margin-bottom: 20px;
   color: var(--ink);
@@ -859,6 +977,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: transform 0.3s ease;
+}
+.vision-mission-grid:hover .vision-mission-image {
+  transform: scale(1.02);
 }
 
 .vision-image {
@@ -868,6 +990,11 @@ body {
   object-fit: cover;
   border-radius: 14px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.vision-mission-grid:hover .vision-image {
+  transform: scale(1.05);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.2);
 }
 
 /* Contact */
@@ -916,7 +1043,7 @@ body {
 }
 
 .info a[href*="mailto"]:hover {
-  color: #FFCC00 !important;
+  color: #ff930d !important;
   text-decoration: none !important;
 }
 .contact-form-container { 
@@ -926,7 +1053,7 @@ body {
   margin: 0 auto; 
 }
 .form { 
-  border: 1px solid #eee; 
+  border: 1px solid #444; 
   border-radius: 14px; 
   padding: 18px; 
   background: rgba(255, 204, 0, 0.1);
@@ -934,7 +1061,7 @@ body {
 }
 .form label { display: block; font-weight: 600; margin-top: 12px; }
 .form input, .form textarea {
-  width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 10px; margin-top: 6px;
+  width: 100%; padding: 12px; border: 1px solid #444; border-radius: 10px; margin-top: 6px;
 }
 .form button {
   margin-top: 16px; padding: 12px 16px; border-radius: 12px; border: none;
@@ -950,7 +1077,7 @@ body {
 }
 
 .contact-item strong {
-  font-family: 'Lato', system-ui, -apple-system, sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-weight: 700;
   display: block;
   margin-bottom: 8px;
@@ -974,18 +1101,18 @@ body {
 
 /* Footer */
 .footer {
-  background: var(--ink); color: var(--paper); margin-top: 52px; padding: 28px 0;
-  border-top: 6px solid var(--brand);
+  background: var(--charcoal); color: var(--ink); margin-top: 52px; padding: 28px 0;
+  border-top: 1px solid var(--brand);
 }
 .footer a {
-  font-family: 'Lato', system-ui, -apple-system, sans-serif;
-  color: var(--paper); text-decoration: none; 
+  font-family: 'Outfit', sans-serif;
+  color: var(--ink); text-decoration: none; 
   font-weight: 400;
 }
 .footer .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
 .footer .brand-name { 
-  font-family: 'Lato', system-ui, -apple-system, sans-serif;
-  color: var(--paper); 
+  font-family: 'Outfit', sans-serif;
+  color: var(--ink); 
   font-weight: 900;
 }
 
@@ -1007,9 +1134,9 @@ body {
 }
 
 .brand-centered .brand-name {
-  font-family: 'Lato', system-ui, -apple-system, sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-weight: 900;
-  color: var(--paper);
+  color: var(--ink);
 }
 
 .footer-sections {
@@ -1023,10 +1150,10 @@ body {
 }
 
 .footer-section h4 {
-  font-family: 'Lato', system-ui, -apple-system, sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-weight: 700;
   margin-bottom: 16px;
-  color: var(--paper);
+  color: var(--ink);
 }
 
 .footer-section p {
@@ -1036,7 +1163,7 @@ body {
 }
 
 .footer-section a {
-  color: var(--paper);
+  color: var(--ink);
   text-decoration: none;
   font-weight: 400;
   transition: color 0.3s ease;
@@ -1046,7 +1173,7 @@ body {
   color: var(--brand);
 }
 
-/* Footer links with yellow hover effect */
+/* Footer links with orange hover effect */
 .footer-section .small a {
   color: var(--muted);
   text-decoration: none;
@@ -1064,13 +1191,13 @@ body {
 }
 
 .footer-bottom-copyright .small {
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--muted);
   font-size: 12px;
   margin: 0;
 }
 
 .small { 
-  font-family: 'Lato', system-ui, -apple-system, sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 14px; color: var(--muted); 
   font-weight: 400;
 }
@@ -1371,9 +1498,9 @@ body {
     top: 100%;
     left: 0;
     right: 0;
-    background: rgba(255,255,255,0.98);
+    background: var(--paper);
     backdrop-filter: saturate(180%) blur(10px);
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #444;
     padding: 12px 16px;
     display: none;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -1389,15 +1516,47 @@ body {
     font-size: 16px;
     border-radius: 8px;
     transition: all 0.3s ease;
+    color: var(--ink);
+    background: transparent;
   }
-  
   .menu a:hover {
     background: var(--tint);
+    color: var(--ink);
     transform: translateY(-1px);
+  }
+  
+  /* Mobile dropdown */
+  .dropdown {
+    width: 100%;
+  }
+  
+  .dropdown-toggle::after {
+    display: none;
+  }
+  
+  .dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    padding: 0;
+    margin-left: 16px;
+    margin-top: 8px;
+  }
+  
+  .dropdown-menu a {
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 6px;
+    margin-bottom: 4px;
   }
   
   /* Hero Banner Mobile */
   .hero-banner { height: calc(60vh + 80px); }
+  .hero-background { background-attachment: scroll; } /* Disable parallax on mobile for better performance */
   .hero-heading { font-size: clamp(24px, 3vw, 40px); }
   .hero-cta { padding: 12px 24px; font-size: 14px; }
   .hero-inner { padding: 40px 0; gap: 20px; }
@@ -1413,6 +1572,7 @@ body {
     min-height: 40vh; 
     padding: 30px 0; 
   }
+  
   .about-page-hero .hero-inner { 
     padding: 30px 0; 
   }
@@ -1431,7 +1591,7 @@ body {
   
   /* Grids */
   .grid { grid-template-columns: 1fr; gap: 14px; }
-  .projects { grid-template-columns: 1fr; gap: 14px; }
+  .projects { grid-template-columns: repeat(2, 1fr); gap: 14px; }
   .project-gallery { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
   
   /* Overlapping Cards Mobile */
@@ -1519,6 +1679,7 @@ body {
   
   /* Hero sections small mobile */
   .hero-banner { height: calc(50vh + 60px); }
+  .hero-background { background-attachment: scroll; } /* Disable parallax on mobile for better performance */
   .hero-heading { font-size: clamp(20px, 2.5vw, 32px); }
   .hero-cta { padding: 10px 20px; font-size: 13px; }
   
@@ -1527,6 +1688,7 @@ body {
     min-height: 35vh; 
     padding: 25px 0; 
   }
+  
   .about-page-hero .hero-inner { 
     padding: 25px 0; 
   }
@@ -1601,19 +1763,32 @@ body {
   }
   
   /* Services page tablet */
-  .service-card { 
-    gap: 40px; 
-    padding: 50px 0;
+  .services-grid { 
+    grid-template-columns: 1fr; 
+    gap: 25px; 
   }
-  .service-image { 
-    height: 350px;
+  .service-card { 
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+  }
+  .service-image {
+    height: 220px;
     width: 100%;
+    padding: 0;
+    margin: 0;
   }
   
   /* Projects page tablet */
   .project-gallery { 
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
     gap: 14px; 
+  }
+  
+  /* Featured Projects responsive */
+  .projects { 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 16px; 
   }
   
   /* About page tablet */
@@ -1678,6 +1853,18 @@ body {
     height: 180px;
   }
   
+  /* Wooden Doors and Home Cinemas mobile */
+  .project-section#solid-doors .project-gallery img,
+  .project-section#flush-doors .project-gallery img,
+  .project-section#grooved-doors .project-gallery img,
+  .project-section#carved-doors .project-gallery img,
+  .project-section#home-cinemas-main .project-gallery img,
+  .project-section#home-cinemas-latest .project-gallery img {
+    flex: 0 0 calc(50% - 6px); /* 2 cards per row on mobile */
+    width: calc(50% - 6px);
+    height: 180px;
+  }
+  
   .carousel-nav-btn {
     width: 45px;
     height: 45px;
@@ -1713,11 +1900,19 @@ body {
   }
   
   /* Services page mobile */
-  .services-grid { gap: 40px; }
+  .services-grid { 
+    grid-template-columns: 1fr; 
+    gap: 20px; 
+  }
   .service-card { 
-    padding: 30px 0;
-    gap: 20px;
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+  }
+  .service-image {
+    height: 180px;
+    padding: 0;
+    margin: 0;
   }
   .service-card.reverse {
     grid-template-columns: 1fr;
@@ -1856,10 +2051,28 @@ body {
   .project-gallery { 
     gap: 10px; 
   }
+  
+  /* Featured Projects small mobile */
+  .projects { 
+    grid-template-columns: 1fr; 
+    gap: 12px; 
+  }
   .project-gallery img { 
     flex: 0 0 calc(100% - 10px); /* 1 card per row on small mobile */
     width: calc(100% - 10px);
     height: 150px; 
+  }
+  
+  /* Wooden Doors and Home Cinemas small mobile */
+  .project-section#solid-doors .project-gallery img,
+  .project-section#flush-doors .project-gallery img,
+  .project-section#grooved-doors .project-gallery img,
+  .project-section#carved-doors .project-gallery img,
+  .project-section#home-cinemas-main .project-gallery img,
+  .project-section#home-cinemas-latest .project-gallery img {
+    flex: 0 0 calc(100% - 10px); /* 1 card per row on small mobile */
+    width: calc(100% - 10px);
+    height: 150px;
   }
   
   /* Project carousel small mobile */
