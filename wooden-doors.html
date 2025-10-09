@@ -81,10 +81,23 @@
   <div class="container hero-inner">
     <div>
       <h1>Wooden Doors</h1>
-      <p class="lead">Crafted with precision and designed for elegance, our wooden doors are the perfect blend of traditional craftsmanship and modern aesthetics. Each door is carefully selected and customized to complement your space, providing both security and style.</p>
+      <p class="lead"><span class="typewriter-text"></span><span class="typewriter-cursor">|</span></p>
     </div>
   </div>
 </section>
+
+<style>
+  .typewriter-cursor {
+    display: inline-block;
+    animation: blink 0.7s infinite;
+    margin-left: 2px;
+  }
+  
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+</style>
 
 <section class="section">
   <div class="container">
@@ -444,6 +457,64 @@ document.addEventListener('DOMContentLoaded', function() {
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
+    }
+  });
+
+  // Smart backspace typewriter effect
+  class TypeWriter {
+    constructor(element, phrases, typeSpeed = 60, deleteSpeed = 40, pauseTime = 2500) {
+      this.element = element;
+      this.phrases = phrases;
+      this.typeSpeed = typeSpeed;
+      this.deleteSpeed = deleteSpeed;
+      this.pauseTime = pauseTime;
+      this.phraseIndex = 0;
+      this.charIndex = 0;
+      this.isDeleting = false;
+      this.type();
+    }
+
+    type() {
+      const currentPhrase = this.phrases[this.phraseIndex];
+      
+      if (this.isDeleting) {
+        // Backspace
+        this.element.textContent = currentPhrase.substring(0, this.charIndex - 1);
+        this.charIndex--;
+        
+        if (this.charIndex === 0) {
+          this.isDeleting = false;
+          this.phraseIndex = (this.phraseIndex + 1) % this.phrases.length;
+          setTimeout(() => this.type(), 500);
+          return;
+        }
+      } else {
+        // Type forward
+        this.element.textContent = currentPhrase.substring(0, this.charIndex + 1);
+        this.charIndex++;
+        
+        if (this.charIndex === currentPhrase.length) {
+          this.isDeleting = true;
+          setTimeout(() => this.type(), this.pauseTime);
+          return;
+        }
+      }
+      
+      setTimeout(() => this.type(), this.isDeleting ? this.deleteSpeed : this.typeSpeed);
+    }
+  }
+
+  // Initialize typewriter effect when page loads
+  document.addEventListener('DOMContentLoaded', function() {
+    const typewriterElement = document.querySelector('.typewriter-text');
+    if (typewriterElement) {
+      const phrases = [
+        "Crafted with precision and designed for elegance.",
+        "Traditional craftsmanship meets modern aesthetics.",
+        "Custom doors that complement your unique space.",
+        "Security and style in perfect harmony."
+      ];
+      new TypeWriter(typewriterElement, phrases);
     }
   });
 </script>

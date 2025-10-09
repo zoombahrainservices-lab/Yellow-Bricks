@@ -29,7 +29,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
-      height: 100%;
+      height: auto;
       color: white !important;
       z-index: 10;
       text-align: left;
@@ -38,16 +38,18 @@
       opacity: 1 !important;
       transform: none !important;
       visibility: visible !important;
-      max-width: 600px;
+      max-width: 800px;
+      margin-left: 200px;
     }
-    .hero-top {
-      margin-bottom: 2rem;
+    .projects-hero-section .hero-top {
+      margin-bottom: 0.5rem;
       z-index: 11;
       position: relative;
     }
+    
     .projects-hero-section .hero-top h1 {
       font-size: 4rem !important;
-      margin: 0 0 0 300px;
+      margin: 0;
       text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
       font-weight: 800 !important;
       color: #FFFFFF !important;
@@ -55,6 +57,32 @@
       z-index: 12;
       display: block !important;
       white-space: nowrap;
+    }
+    
+    .projects-hero-section .hero-description {
+      margin-top: 0.5rem;
+      z-index: 11;
+      position: relative;
+    }
+    
+    .projects-hero-section .hero-description p {
+      font-size: 1.2rem;
+      margin: 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+      color: #FFFFFF;
+      line-height: 1.6;
+      max-width: 100%;
+    }
+    
+    .typewriter-cursor {
+      display: inline-block;
+      animation: blink 0.7s infinite;
+      margin-left: 2px;
+    }
+    
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
     }
     
     /* Hero Contact Box */
@@ -68,20 +96,19 @@
       z-index: 10;
       position: relative;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-      margin-right: 400px;
+      margin-right: 200px;
       margin-left: 300px;
     }
     
     .hero-contact-box h2 {
       font-size: 2rem;
       margin-bottom: 1rem;
-      font-weight: 600;
       color: white;
     }
     
     .hero-contact-box p {
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
       color: rgba(255, 255, 255, 0.9);
     }
     
@@ -93,22 +120,22 @@
     
     .hero-contact-box .btn {
       padding: 12px 24px;
-      border-radius: 30px;
+      border-radius: 8px;
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 600;
       transition: all 0.3s ease;
-      font-size: 1rem;
     }
     
-    
     .hero-contact-box .btn.contact {
-      background-color: #ff930d;
+      background: var(--brand);
       color: white;
+      border: 2px solid var(--brand);
     }
     
     .hero-contact-box .btn.contact:hover {
-      background-color: #e67e00;
-      transform: translateY(-2px);
+      background: transparent;
+      color: var(--brand);
+      border-color: var(--brand);
     }
     
     /* Mobile responsive */
@@ -120,23 +147,25 @@
         justify-content: center;
         gap: 2rem;
       }
+      .projects-hero-section .hero-content {
+        margin-left: 0;
+      }
       .projects-hero-section .hero-top h1 {
         font-size: 2.8rem !important;
         margin: 0;
         white-space: nowrap;
+      }
+      .projects-hero-section .hero-description p {
+        font-size: 1rem;
+        margin: 0;
+        text-align: center;
+        max-width: 100%;
       }
       .hero-contact-box {
         max-width: 350px;
         padding: 1.5rem;
         margin-right: 0;
         margin-left: 0;
-      }
-      .hero-contact-box h2 {
-        font-size: 1.5rem;
-      }
-      .hero-contact-box .buttons {
-        flex-direction: column;
-        gap: 0.8rem;
       }
     }
     
@@ -154,25 +183,17 @@
         margin: 0;
         white-space: nowrap;
       }
+      .projects-hero-section .hero-description p {
+        font-size: 0.9rem;
+        margin: 0;
+        text-align: center;
+        max-width: 100%;
+      }
       .hero-contact-box {
         max-width: 300px;
         padding: 1.2rem;
         margin-right: 0;
         margin-left: 0;
-      }
-      .hero-contact-box h2 {
-        font-size: 1.3rem;
-      }
-      .hero-contact-box p {
-        font-size: 1rem;
-      }
-      .hero-contact-box .buttons {
-        flex-direction: column;
-        gap: 0.6rem;
-      }
-      .hero-contact-box .btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
       }
     }
   </style>
@@ -248,6 +269,9 @@
     <div class="hero-top">
       <h1>Our Projects</h1>
     </div>
+    <div class="hero-description">
+      <p><span class="typewriter-text"></span><span class="typewriter-cursor">|</span></p>
+    </div>
   </div>
   <div class="hero-contact-box">
     <h2>Contact Us Today</h2>
@@ -257,6 +281,66 @@
     </div>
   </div>
 </section>
+
+<script>
+  // Smart backspace typewriter effect
+  class TypeWriter {
+    constructor(element, phrases, typeSpeed = 50, deleteSpeed = 30, pauseTime = 2500) {
+      this.element = element;
+      this.phrases = phrases;
+      this.typeSpeed = typeSpeed;
+      this.deleteSpeed = deleteSpeed;
+      this.pauseTime = pauseTime;
+      this.phraseIndex = 0;
+      this.charIndex = 0;
+      this.isDeleting = false;
+      this.type();
+    }
+
+    type() {
+      const currentPhrase = this.phrases[this.phraseIndex];
+      
+      if (this.isDeleting) {
+        // Backspace
+        this.element.textContent = currentPhrase.substring(0, this.charIndex - 1);
+        this.charIndex--;
+        
+        if (this.charIndex === 0) {
+          this.isDeleting = false;
+          this.phraseIndex = (this.phraseIndex + 1) % this.phrases.length;
+          setTimeout(() => this.type(), 500);
+          return;
+        }
+      } else {
+        // Type forward
+        this.element.textContent = currentPhrase.substring(0, this.charIndex + 1);
+        this.charIndex++;
+        
+        if (this.charIndex === currentPhrase.length) {
+          this.isDeleting = true;
+          setTimeout(() => this.type(), this.pauseTime);
+          return;
+        }
+      }
+      
+      setTimeout(() => this.type(), this.isDeleting ? this.deleteSpeed : this.typeSpeed);
+    }
+  }
+
+  // Initialize typewriter effect when page loads
+  document.addEventListener('DOMContentLoaded', function() {
+    const typewriterElement = document.querySelector('.typewriter-text');
+    if (typewriterElement) {
+      const phrases = [
+        "Explore our collection of thoughtfully designed spaces — from elegant homes and inspiring offices to bespoke joinery, wooden doors, and immersive home cinemas.",
+        "Each project reflects our passion for design excellence and commitment to quality craftsmanship.",
+        "Transforming visions into reality with precision and care.",
+        "Where creativity meets functionality in every detail."
+      ];
+      new TypeWriter(typewriterElement, phrases);
+    }
+  });
+</script>
 
 <section class="section">
   <div class="container">

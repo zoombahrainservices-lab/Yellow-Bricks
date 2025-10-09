@@ -187,6 +187,17 @@
         margin-left: 0;
       }
     }
+    
+    .typewriter-cursor {
+      display: inline-block;
+      animation: blink 0.7s infinite;
+      margin-left: 2px;
+    }
+    
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
   </style>
 </head>
 <body>
@@ -261,7 +272,7 @@
       <h1>About Yellow Bricks</h1>
     </div>
     <div class="hero-description">
-      <p>Yellow Bricks Co. WLL is a Bahrain-based interior design firm dedicated to creating modern living and office spaces that inspire and impress. With a passionate team of designers and architects, we transform ideas into reality by blending creativity, functionality, and innovation.</p>
+      <p><span class="typewriter-text"></span><span class="typewriter-cursor">|</span></p>
     </div>
   </div>
   <div class="hero-contact-box">
@@ -526,6 +537,64 @@
         header.classList.add('scrolled');
       } else {
         header.classList.remove('scrolled');
+      }
+    });
+
+    // Smart backspace typewriter effect
+    class TypeWriter {
+      constructor(element, phrases, typeSpeed = 60, deleteSpeed = 40, pauseTime = 2500) {
+        this.element = element;
+        this.phrases = phrases;
+        this.typeSpeed = typeSpeed;
+        this.deleteSpeed = deleteSpeed;
+        this.pauseTime = pauseTime;
+        this.phraseIndex = 0;
+        this.charIndex = 0;
+        this.isDeleting = false;
+        this.type();
+      }
+
+      type() {
+        const currentPhrase = this.phrases[this.phraseIndex];
+        
+        if (this.isDeleting) {
+          // Backspace
+          this.element.textContent = currentPhrase.substring(0, this.charIndex - 1);
+          this.charIndex--;
+          
+          if (this.charIndex === 0) {
+            this.isDeleting = false;
+            this.phraseIndex = (this.phraseIndex + 1) % this.phrases.length;
+            setTimeout(() => this.type(), 500);
+            return;
+          }
+        } else {
+          // Type forward
+          this.element.textContent = currentPhrase.substring(0, this.charIndex + 1);
+          this.charIndex++;
+          
+          if (this.charIndex === currentPhrase.length) {
+            this.isDeleting = true;
+            setTimeout(() => this.type(), this.pauseTime);
+            return;
+          }
+        }
+        
+        setTimeout(() => this.type(), this.isDeleting ? this.deleteSpeed : this.typeSpeed);
+      }
+    }
+
+    // Initialize typewriter effect when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      const typewriterElement = document.querySelector('.typewriter-text');
+      if (typewriterElement) {
+        const phrases = [
+          "Creating modern spaces that inspire and impress.",
+          "Blending creativity, functionality, and innovation.",
+          "Transforming ideas into reality with passion.",
+          "Your trusted Bahrain-based interior design partner."
+        ];
+        new TypeWriter(typewriterElement, phrases);
       }
     });
   </script>
