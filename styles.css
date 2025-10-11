@@ -1993,6 +1993,16 @@ body {
   .vision-mission-grid {
     grid-template-columns: 1fr;
     gap: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .vision-mission-content {
+    order: 1;
+  }
+  
+  .vision-mission-image {
+    order: 2;
   }
   
   .vision-image {
@@ -2152,6 +2162,16 @@ body {
   /* Vision & Mission small mobile */
   .vision-mission-grid {
     gap: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .vision-mission-content {
+    order: 1;
+  }
+  
+  .vision-mission-image {
+    order: 2;
   }
   
   .vision-image {

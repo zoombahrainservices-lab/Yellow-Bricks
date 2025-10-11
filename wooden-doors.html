@@ -77,27 +77,217 @@
   });
 </script>
 
-<section class="about-page-hero">
-  <div class="container hero-inner">
-    <div>
+<section class="wooden-doors-hero-section">
+  <div class="hero-content">
+    <div class="hero-top">
       <h1>Wooden Doors</h1>
-      <p class="lead"><span class="typewriter-text"></span><span class="typewriter-cursor">|</span></p>
+    </div>
+    <div class="hero-description">
+      <p><span class="typewriter-text"></span><span class="typewriter-cursor">|</span></p>
+    </div>
+  </div>
+  <div class="hero-contact-box">
+    <h2>Contact Us Today</h2>
+    <p>Don't hesitate and send us a message.</p>
+    <div class="buttons">
+      <a href="contact.html" class="btn contact">Contact Now</a>
     </div>
   </div>
 </section>
 
-<style>
-  .typewriter-cursor {
-    display: inline-block;
-    animation: blink 0.7s infinite;
-    margin-left: 2px;
-  }
-  
-  @keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
-  }
-</style>
+  <style>
+    .wooden-doors-hero-section {
+      width: 100%;
+      height: calc(50vh + 200px);
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url('images/pexels-scottwebb-1029599.jpg');
+      background-size: cover;
+      background-position: center 60%;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      padding: 0 2rem;
+    }
+    
+    .wooden-doors-hero-section .hero-content {
+      display: flex !important;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      height: auto;
+      color: white !important;
+      z-index: 10;
+      text-align: left;
+      padding: 2rem;
+      position: relative;
+      opacity: 1 !important;
+      transform: none !important;
+      visibility: visible !important;
+      max-width: 800px;
+      margin-left: 200px;
+    }
+    
+    .wooden-doors-hero-section .hero-top {
+      margin-bottom: 0.5rem;
+      z-index: 11;
+      position: relative;
+    }
+    
+    .wooden-doors-hero-section .hero-top h1 {
+      font-size: 4rem !important;
+      margin: 0;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+      font-weight: 800 !important;
+      color: #FFFFFF !important;
+      position: relative;
+      z-index: 12;
+      display: block !important;
+      white-space: nowrap;
+    }
+    
+    .wooden-doors-hero-section .hero-description {
+      margin-top: 0.5rem;
+      z-index: 11;
+      position: relative;
+    }
+    
+    .wooden-doors-hero-section .hero-description p {
+      font-size: 1.2rem;
+      margin: 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+      color: #FFFFFF;
+      line-height: 1.6;
+      max-width: 100%;
+    }
+    
+    /* Hero Contact Box */
+    .wooden-doors-hero-section .hero-contact-box {
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 16px;
+      padding: 2.5rem;
+      max-width: 500px;
+      text-align: center;
+      color: white;
+      z-index: 10;
+      position: relative;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      margin-right: 200px;
+      margin-left: 300px;
+    }
+    
+    .wooden-doors-hero-section .hero-contact-box h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: white;
+    }
+    
+    .wooden-doors-hero-section .hero-contact-box p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .wooden-doors-hero-section .hero-contact-box .buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+    
+    .wooden-doors-hero-section .hero-contact-box .btn {
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .wooden-doors-hero-section .hero-contact-box .btn.contact {
+      background: var(--brand);
+      color: white;
+      border: 2px solid var(--brand);
+    }
+    
+    .wooden-doors-hero-section .hero-contact-box .btn.contact:hover {
+      background: transparent;
+      color: var(--brand);
+      border-color: var(--brand);
+    }
+    
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+      .wooden-doors-hero-section {
+        height: calc(40vh + 150px);
+        background-attachment: scroll;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+      }
+      .wooden-doors-hero-section .hero-content {
+        margin-left: 0;
+      }
+      .wooden-doors-hero-section .hero-top h1 {
+        font-size: 2.8rem !important;
+        margin: 0;
+        white-space: nowrap;
+      }
+      .wooden-doors-hero-section .hero-description p {
+        font-size: 1rem;
+        margin: 0;
+        text-align: center;
+        max-width: 100%;
+      }
+      .wooden-doors-hero-section .hero-contact-box {
+        max-width: 350px;
+        padding: 1.5rem;
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .wooden-doors-hero-section {
+        height: calc(35vh + 100px);
+        background-attachment: scroll;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.5rem;
+        padding: 1rem;
+      }
+      .wooden-doors-hero-section .hero-top h1 {
+        font-size: 2.2rem !important;
+        margin: 0;
+        white-space: nowrap;
+      }
+      .wooden-doors-hero-section .hero-description p {
+        font-size: 0.9rem;
+        margin: 0;
+        text-align: center;
+        max-width: 100%;
+      }
+      .wooden-doors-hero-section .hero-contact-box {
+        max-width: 300px;
+        padding: 1.2rem;
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+    
+    .typewriter-cursor {
+      display: inline-block;
+      animation: blink 0.7s infinite;
+      margin-left: 2px;
+    }
+    
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+  </style>
 
 <section class="section">
   <div class="container">
