@@ -24,6 +24,8 @@
       <div class="dropdown">
         <a href="services.html" class="dropdown-toggle">Services</a>
         <div class="dropdown-menu">
+          <a href="home-interiors.html">Home Interiors</a>
+          <a href="commercial-spaces.html">Commercial Spaces</a>
           <a href="wooden-doors.html">Wooden Doors</a>
           <a href="home-cinemas.html">Home Cinemas</a>
         </div>
@@ -108,8 +110,8 @@
         const category = slide.getAttribute('data-category');
         
         // Redirect to projects page with corresponding section
-        if (category === 'office') {
-          window.location.href = 'projects.html#offices';
+        if (category === 'commercial') {
+          window.location.href = 'projects.html#commercial-spaces';
         } else if (category === 'cinema') {
           window.location.href = 'projects.html#home-cinemas';
         } else if (category === 'interiors') {
@@ -125,8 +127,8 @@
         const category = this.getAttribute('data-category');
         
         // Redirect to projects page with corresponding section
-        if (category === 'office') {
-          window.location.href = 'projects.html#offices';
+        if (category === 'commercial') {
+          window.location.href = 'projects.html#commercial-spaces';
         } else if (category === 'cinema') {
           window.location.href = 'projects.html#home-cinemas';
         } else if (category === 'doors') {
@@ -155,19 +157,19 @@
     </div>
   </div>
   
-  <div class="hero-slide" data-category="office">
+  <div class="hero-slide" data-category="commercial">
     <div class="hero-background" style="background-image: url('images/Office/IMG-20251007-WA0026.jpg');"></div>
     <div class="hero-content">
       <h1 class="hero-heading">Where Productivity Meets Style</h1>
-      <button class="hero-cta">Explore Office Designs</button>
+      <button class="hero-cta">Explore Commercial Designs</button>
     </div>
   </div>
   
-  <div class="hero-slide" data-category="office">
+  <div class="hero-slide" data-category="commercial">
     <div class="hero-background" style="background-image: url('images/Office/IMG-20251007-WA0032.jpg');"></div>
     <div class="hero-content">
       <h1 class="hero-heading">Transform Your Workspace, Inspire Your Team</h1>
-      <button class="hero-cta">Explore Office Designs</button>
+      <button class="hero-cta">Explore Commercial Designs</button>
     </div>
   </div>
   
@@ -175,7 +177,7 @@
     <div class="hero-background" style="background-image: url('images/hero-banner/luxury-movie-theater-with-modern-design-lighting-generated-by-ai.jpg');"></div>
     <div class="hero-content">
       <h1 class="hero-heading">Your Private Theater Awaits</h1>
-      <button class="hero-cta">Discover Home Cinema</button>
+      <button class="hero-cta">Discover Home Cinemas</button>
     </div>
   </div>
   
@@ -183,7 +185,7 @@
     <div class="hero-background" style="background-image: url('images/HC/HC-3R1.jpg');"></div>
     <div class="hero-content">
       <h1 class="hero-heading">Step Into Your Personal Theater</h1>
-      <button class="hero-cta">Discover Home Cinema</button>
+      <button class="hero-cta">Discover Home Cinemas</button>
     </div>
   </div>
 </section>
@@ -199,18 +201,18 @@
           <p>Beautiful residential interior transformations</p>
         </div>
       </article>
-      <article class="overlapping-card" data-category="office">
-        <img src="images/E-BROCHURE YB.pdf-image-074.png" alt="Office Interior" class="overlapping-card-image">
+      <article class="overlapping-card" data-category="cinema">
+        <img src="images/HC/HC-2R1 (1).jpg" alt="Home Cinemas" class="overlapping-card-image">
         <div class="overlapping-card-content">
-          <h3>Office</h3>
-          <p>Professional workspace design and fit-out solutions</p>
+          <h3>Home Cinemas</h3>
+          <p>Immersive audio-visual entertainment spaces</p>
         </div>
       </article>
-      <article class="overlapping-card" data-category="cinema">
-        <img src="images/HC/HC-2R1 (1).jpg" alt="Home Cinema" class="overlapping-card-image">
+      <article class="overlapping-card" data-category="commercial">
+        <img src="images/E-BROCHURE YB.pdf-image-074.png" alt="Commercial Spaces" class="overlapping-card-image">
         <div class="overlapping-card-content">
-          <h3>Home Cinema</h3>
-          <p>Immersive audio-visual entertainment spaces</p>
+          <h3>Commercial Spaces</h3>
+          <p>Professional workspace design and fit-out solutions</p>
         </div>
       </article>
       <article class="overlapping-card" data-category="doors">
@@ -256,23 +258,23 @@
 <section class="section" style="background:var(--tint)">
   <div class="container">
     <h2>Featured Projects</h2>
-    <p class="sub">A glimpse of our residential, commercial spaces, and home cinema works.</p>
+    <p class="sub">A glimpse of our residential, home cinemas, commercial spaces, and wooden door works.</p>
     <div class="projects">
       <a href="projects.html#home-interiors" class="project">
         <img src="images/E-BROCHURE YB.pdf-image-052.jpg" alt="Contemporary home interior" class="project-thumb">
         <div class="body"><h3>Home Interiors</h3><p class="meta">Residential • Design & Fit‑out</p></div>
       </a>
+      <a href="projects.html#home-cinemas" class="project">
+        <img src="images/HC/HC-2R1 (1).jpg" alt="Luxury home cinema" class="project-thumb">
+        <div class="body"><h3>Home Cinemas</h3><p class="meta">Audio-Visual • Luxury Theater</p></div>
+      </a>
       <a href="projects.html#commercial-spaces" class="project">
         <img src="images/Comertial Space/CS - 1.jpg" alt="Modern commercial interior" class="project-thumb">
         <div class="body"><h3>Commercial Spaces</h3><p class="meta">Cafes • Restaurants • Retail</p></div>
       </a>
-      <a href="projects.html#offices" class="project">
-        <img src="images/E-BROCHURE YB.pdf-image-074.png" alt="Office interior workspace" class="project-thumb">
-        <div class="body"><h3>Offices</h3><p class="meta">Commercial • Space Planning</p></div>
-      </a>
-      <a href="projects.html#home-cinemas" class="project">
-        <img src="images/HC/HC-2R1 (1).jpg" alt="Luxury home cinema" class="project-thumb">
-        <div class="body"><h3>Home Cinemas</h3><p class="meta">Audio-Visual • Luxury Theater</p></div>
+      <a href="projects.html#wooden-doors" class="project">
+        <img src="images/E-BROCHURE YB.pdf-image-033.png" alt="Custom wooden doors" class="project-thumb">
+        <div class="body"><h3>Wooden Doors</h3><p class="meta">Custom Crafted • Solid Wood</p></div>
       </a>
     </div>
   </div>

@@ -24,9 +24,11 @@
     <nav class="menu" aria-label="Primary">
       <a href="index.html" class="">Home</a>
       <div class="dropdown">
-        <a href="services.html" class="dropdown-toggle">Services</a>
+        <a href="services.html" class="dropdown-toggle active">Services</a>
         <div class="dropdown-menu">
-          <a href="wooden-doors.html">Wooden Doors</a>
+          <a href="home-interiors.html">Home Interiors</a>
+          <a href="commercial-spaces.html">Commercial Spaces</a>
+          <a href="wooden-doors.html" class="active">Wooden Doors</a>
           <a href="home-cinemas.html">Home Cinemas</a>
         </div>
       </div>
@@ -287,129 +289,216 @@
       0%, 50% { opacity: 1; }
       51%, 100% { opacity: 0; }
     }
+    
+    /* Section Header Styles */
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .section-header h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 600;
+      color: var(--ink);
+      margin: 0;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-header h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background-color: #ff930d;
+      border-radius: 2px;
+    }
+    
+    /* Gallery Styles */
+    .door-subsection {
+      margin-top: 3rem;
+    }
+    
+    /* Wooden Doors Gallery - 5 images in a row */
+    .wooden-doors-gallery {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      margin-top: 2rem;
+    }
+    
+    .wooden-doors-gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .wooden-doors-gallery img:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Responsive adjustments for wooden doors gallery */
+    @media (max-width: 1200px) {
+      .wooden-doors-gallery {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+      }
+      
+      .wooden-doors-gallery img {
+        height: 180px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .wooden-doors-gallery {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+      }
+      
+      .wooden-doors-gallery img {
+        height: 150px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .wooden-doors-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+      
+      .wooden-doors-gallery img {
+        height: 120px;
+      }
+    }
   </style>
 
+
+<!-- Solid Doors Section -->
 <section class="section">
   <div class="container">
-    <!-- Solid Doors Section -->
-    <section class="project-section" id="solid-doors">
-      <h3>Solid Doors</h3>
-      <p class="sub">Premium solid wood doors built to last, offering exceptional durability and timeless beauty.</p>
-      <div class="project-carousel-container">
-        <button class="carousel-nav-btn carousel-prev" data-section="solid-doors" data-direction="prev" aria-label="Previous solid doors" style="display: none;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="15,18 9,12 15,6"></polyline>
-          </svg>
-        </button>
-        <div class="project-gallery-wrapper">
-          <div class="project-gallery" data-section="solid-doors">
-            <img src="images/Solid Doors/Solid_Doors_1-removebg-preview.png" alt="Solid Wood Door 1">
-            <img src="images/Solid Doors/Solid_Doors_2-removebg-preview.png" alt="Solid Wood Door 2">
-            <img src="images/Solid Doors/Solid_Doors_3-removebg-preview.png" alt="Solid Wood Door 3">
-            <img src="images/Solid Doors/Solid_Doors_4-removebg-preview.png" alt="Solid Wood Door 4">
-            <img src="images/Solid Doors/Solid_Doors_5-removebg-preview.png" alt="Solid Wood Door 5">
-          </div>
-        </div>
-        <button class="carousel-nav-btn carousel-next" data-section="solid-doors" data-direction="next" aria-label="Next solid doors">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="9,18 15,12 9,6"></polyline>
-          </svg>
-        </button>
+    <!-- Main Heading -->
+    <div class="section-header">
+      <h2>Solid Wooden Doors</h2>
+    </div>
+    
+    <div class="vision-mission-grid">
+      <div class="vision-mission-content">
+        <p>Crafted from a single piece of high-quality timber, Solid Wooden Doors offer exceptional strength, sound insulation, and timeless beauty. Perfect for main entrances or rooms where elegance and durability matter most.</p>
       </div>
-    </section>
+      <div class="vision-mission-image">
+        <img src="images/Solid Doors/Solid_Doors_2-removebg-preview.png" alt="Solid Wooden Doors" class="vision-image">
+      </div>
+    </div>
+    
+    <!-- Solid Doors Gallery -->
+    <div class="door-subsection" id="solid-doors">
+      <div class="wooden-doors-gallery" data-section="solid-doors">
+        <img src="images/Solid Doors/Solid_Doors_1-removebg-preview.png" alt="Solid Door Design 1">
+        <img src="images/Solid Doors/Solid_Doors_2-removebg-preview.png" alt="Solid Door Design 2">
+        <img src="images/Solid Doors/Solid_Doors_3-removebg-preview.png" alt="Solid Door Design 3">
+        <img src="images/Solid Doors/Solid_Doors_4-removebg-preview.png" alt="Solid Door Design 4">
+        <img src="images/Solid Doors/Solid_Doors_5-removebg-preview.png" alt="Solid Door Design 5">
+      </div>
+    </div>
   </div>
 </section>
 
+<!-- Flush Doors Section -->
 <section class="section">
   <div class="container">
-    <!-- Flush Doors Section -->
-    <section class="project-section" id="flush-doors">
-      <h3>Flush Doors</h3>
-      <p class="sub">Clean, minimalist designs perfect for modern interiors with smooth, unadorned surfaces.</p>
-      <div class="project-carousel-container">
-        <button class="carousel-nav-btn carousel-prev" data-section="flush-doors" data-direction="prev" aria-label="Previous flush doors" style="display: none;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="15,18 9,12 15,6"></polyline>
-          </svg>
-        </button>
-        <div class="project-gallery-wrapper">
-          <div class="project-gallery" data-section="flush-doors">
-            <img src="images/Flush Doors/Flush door 1.png" alt="Flush Door 1">
-            <img src="images/Flush Doors/Flush Door 2.png" alt="Flush Door 2">
-            <img src="images/Flush Doors/Flush Door 3.png" alt="Flush Door 3">
-            <img src="images/Flush Doors/Flush Door 4.png" alt="Flush Door 4">
-            <img src="images/Flush Doors/Flush Door 5.png" alt="Flush Door 5">
-          </div>
-        </div>
-        <button class="carousel-nav-btn carousel-next" data-section="flush-doors" data-direction="next" aria-label="Next flush doors">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="9,18 15,12 9,6"></polyline>
-          </svg>
-        </button>
+    <!-- Main Heading -->
+    <div class="section-header">
+      <h2>Flush Doors</h2>
+    </div>
+    
+    <div class="vision-mission-grid">
+      <div class="vision-mission-image">
+        <img src="images/Flush Doors/Flush door 1.png" alt="Flush Doors" class="vision-image">
       </div>
-    </section>
+      <div class="vision-mission-content">
+        <p>Sleek and modern, Flush Doors feature a smooth, flat surface ideal for contemporary interiors. They are lightweight, easy to maintain, and available in various finishes to complement your décor seamlessly.</p>
+      </div>
+    </div>
+    
+    <!-- Flush Doors Gallery -->
+    <div class="door-subsection" id="flush-doors">
+      <div class="wooden-doors-gallery" data-section="flush-doors">
+        <img src="images/Flush Doors/Flush door 1.png" alt="Flush Door Design 1">
+        <img src="images/Flush Doors/Flush Door 2.png" alt="Flush Door Design 2">
+        <img src="images/Flush Doors/Flush Door 3.png" alt="Flush Door Design 3">
+        <img src="images/Flush Doors/Flush Door 4.png" alt="Flush Door Design 4">
+        <img src="images/Flush Doors/Flush Door 5.png" alt="Flush Door Design 5">
+      </div>
+    </div>
   </div>
 </section>
 
+<!-- Grooved Doors Section -->
 <section class="section">
   <div class="container">
-    <!-- Grooved Doors Section -->
-    <section class="project-section" id="grooved-doors">
-      <h3>Grooved Doors</h3>
-      <p class="sub">Textured surfaces with elegant grooves that add depth and visual interest to your space.</p>
-      <div class="project-carousel-container">
-        <button class="carousel-nav-btn carousel-prev" data-section="grooved-doors" data-direction="prev" aria-label="Previous grooved doors" style="display: none;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="15,18 9,12 15,6"></polyline>
-          </svg>
-        </button>
-        <div class="project-gallery-wrapper">
-          <div class="project-gallery" data-section="grooved-doors">
-            <img src="images/Grooved Doors/Grooved_3-removebg-preview.png" alt="Grooved Door 1">
-            <img src="images/Grooved Doors/IMG-20251005-WA0007-removebg-preview.png" alt="Grooved Door 2">
-            <img src="images/Grooved Doors/IMG-20251005-WA0008-removebg-preview.png" alt="Grooved Door 3">
-            <img src="images/Grooved Doors/IMG-20251005-WA0009-removebg-preview.png" alt="Grooved Door 4">
-            <img src="images/Grooved Doors/IMG-20251005-WA0010-removebg-preview.png" alt="Grooved Door 5">
-          </div>
-        </div>
-        <button class="carousel-nav-btn carousel-next" data-section="grooved-doors" data-direction="next" aria-label="Next grooved doors">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="9,18 15,12 9,6"></polyline>
-          </svg>
-        </button>
+    <!-- Main Heading -->
+    <div class="section-header">
+      <h2>Grooved Doors</h2>
+    </div>
+    
+    <div class="vision-mission-grid">
+      <div class="vision-mission-content">
+        <p>Add a touch of texture and style with Grooved Wooden Doors. Characterized by fine lines and patterns carved into the surface, these doors bring visual depth and modern sophistication to any space.</p>
       </div>
-    </section>
+      <div class="vision-mission-image">
+        <img src="images/Grooved Doors/Grooved_3-removebg-preview.png" alt="Grooved Doors" class="vision-image">
+      </div>
+    </div>
+    
+    <!-- Grooved Doors Gallery -->
+    <div class="door-subsection" id="grooved-doors">
+      <div class="wooden-doors-gallery" data-section="grooved-doors">
+        <img src="images/Grooved Doors/Grooved_3-removebg-preview.png" alt="Grooved Door Design 1">
+        <img src="images/Grooved Doors/IMG-20251005-WA0007-removebg-preview.png" alt="Grooved Door Design 2">
+        <img src="images/Grooved Doors/IMG-20251005-WA0008-removebg-preview.png" alt="Grooved Door Design 3">
+        <img src="images/Grooved Doors/IMG-20251005-WA0009-removebg-preview.png" alt="Grooved Door Design 4">
+        <img src="images/Grooved Doors/IMG-20251005-WA0010-removebg-preview.png" alt="Grooved Door Design 5">
+      </div>
+    </div>
   </div>
 </section>
 
+<!-- Carved Doors Section -->
 <section class="section">
   <div class="container">
-    <!-- Carved Doors Section -->
-    <section class="project-section" id="carved-doors">
-      <h3>Carved Doors</h3>
-      <p class="sub">Artisanal carved wooden doors featuring intricate designs and traditional craftsmanship.</p>
-      <div class="project-carousel-container">
-        <button class="carousel-nav-btn carousel-prev" data-section="carved-doors" data-direction="prev" aria-label="Previous carved doors" style="display: none;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="15,18 9,12 15,6"></polyline>
-          </svg>
-        </button>
-        <div class="project-gallery-wrapper">
-          <div class="project-gallery" data-section="carved-doors">
-            <img src="images/carved/Carved Door 5.jpg" alt="Carved Door 1">
-            <img src="images/carved/IMG-20251005-WA0003.jpg" alt="Carved Door 2">
-            <img src="images/carved/IMG-20251005-WA0004.jpg" alt="Carved Door 3">
-            <img src="images/carved/IMG-20251005-WA0005.jpg" alt="Carved Door 4">
-            <img src="images/carved/IMG-20251005-WA0006.jpg" alt="Carved Door 5">
-          </div>
-        </div>
-        <button class="carousel-nav-btn carousel-next" data-section="carved-doors" data-direction="next" aria-label="Next carved doors">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="9,18 15,12 9,6"></polyline>
-          </svg>
-        </button>
+    <!-- Main Heading -->
+    <div class="section-header">
+      <h2>Carved Doors</h2>
+    </div>
+    
+    <div class="vision-mission-grid">
+      <div class="vision-mission-image">
+        <img src="images/carved/Carved Door 5.jpg" alt="Carved Doors" class="vision-image">
       </div>
-    </section>
+      <div class="vision-mission-content">
+        <p>A masterpiece of craftsmanship, Carved Wooden Doors showcase intricate detailing and artistic patterns. Ideal for grand entrances and statement interiors, these doors blend tradition with luxury for a truly elegant finish.</p>
+      </div>
+    </div>
+    
+    <!-- Carved Doors Gallery -->
+    <div class="door-subsection" id="carved-doors">
+      <div class="wooden-doors-gallery" data-section="carved-doors">
+        <img src="images/carved/Carved Door 5.jpg" alt="Carved Door Design 1">
+        <img src="images/carved/IMG-20251005-WA0003.jpg" alt="Carved Door Design 2">
+        <img src="images/carved/IMG-20251005-WA0004.jpg" alt="Carved Door Design 3">
+        <img src="images/carved/IMG-20251005-WA0005.jpg" alt="Carved Door Design 4">
+        <img src="images/carved/IMG-20251005-WA0006.jpg" alt="Carved Door Design 5">
+      </div>
+    </div>
   </div>
 </section>
 
