@@ -1,0 +1,15 @@
+# Yellow Bricks Bahrain - Robots.txt
+# Updated: October 2025
+
+User-agent: *
+Allow: /
+
+# Disallow unnecessary files
+Disallow: /README.md
+
+# Sitemap Location
+Sitemap: https://www.yellowbricksbahrain.com/sitemap.xml
+
+# Crawl-delay for polite bots
+Crawl-delay: 1
+

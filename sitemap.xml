@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://www.yellowbricksbahrain.com/</loc>
+    <lastmod>2025-10-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.yellowbricksbahrain.com/images/hero-banner/image%202%20(2).jpg</image:loc>
+      <image:caption>Yellow Bricks Bahrain Interior Design</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Service Pages - High Priority -->
+  <url>
+    <loc>https://www.yellowbricksbahrain.com/home-interiors.html</loc>
+    <lastmod>2025-10-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.yellowbricksbahrain.com/images/Home%20Interior/image%202%20(2).jpg</image:loc>
+      <image:caption>Home Interior Design Bahrain</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://www.yellowbricksbahrain.com/home-cinemas.html</loc>
+    <lastmod>2025-10-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.yellowbricksbahrain.com/images/HC/HC-3R1.jpg</image:loc>
+      <image:caption>Home Cinema Installation Bahrain</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://www.yellowbricksbahrain.com/wooden-doors.html</loc>
+    <lastmod>2025-10-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.yellowbricksbahrain.com/images/Solid%20Doors/Solid_Doors_2-removebg-preview.png</image:loc>
+      <image:caption>Wooden Doors Bahrain</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://www.yellowbricksbahrain.com/commercial-spaces.html</loc>
+    <lastmod>2025-10-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.yellowbricksbahrain.com/images/Office/IMG-20251007-WA0028.jpg</image:loc>
+      <image:caption>Commercial Fit-Out Bahrain</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Core Pages - Medium-High Priority -->
+  <url>
+    <loc>https://www.yellowbricksbahrain.com/services.html</loc>
+    <lastmod>2025-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.yellowbricksbahrain.com/projects.html</loc>
+    <lastmod>2025-10-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.yellowbricksbahrain.com/about.html</loc>
+    <lastmod>2025-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.yellowbricksbahrain.com/contact.html</loc>
+    <lastmod>2025-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+</urlset>
+
