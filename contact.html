@@ -96,7 +96,7 @@
     <aside class="info">
       <h2>Contact info</h2>
       <p><strong>Phone:</strong> +973 3361 9608 • +973 3352 2197 • +973 7791 2500</p>
-      <p><strong>Email:</strong> <a href="#" onclick="copyEmail()">yellowbricksbh@gmail.com</a></p>
+      <p><strong>Email:</strong> <a href="#" onclick="copyEmail()">info@yellowbricksbh.com</a></p>
       <p><strong>Address:</strong> Office #13, Bldg #4127, Road #1173, Tubli, Kingdom of Bahrain</p>
       <div style="margin-top:12px;">
         <iframe class="map" loading="lazy"
@@ -169,7 +169,7 @@
       const message = formData.get('message');
       
       // Create mailto link with form data
-      const mailtoLink = `mailto:yellowbricksbh@gmail.com?subject=${encodeURIComponent('Contact Form Submission')}&body=${encodeURIComponent(
+      const mailtoLink = `mailto:info@yellowbricksbh.com?subject=${encodeURIComponent('Contact Form Submission')}&body=${encodeURIComponent(
         `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`
       )}`;
       
@@ -179,7 +179,7 @@
     
     // Copy email to clipboard function
     function copyEmail() {
-      const email = 'yellowbricksbh@gmail.com';
+      const email = 'info@yellowbricksbh.com';
       navigator.clipboard.writeText(email).then(function() {
         // Show a brief success message
         const link = event.target;

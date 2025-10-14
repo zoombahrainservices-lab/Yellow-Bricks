@@ -607,7 +607,7 @@ Message:
 ${message}`;
       
       // Create mailto link
-      const mailtoLink = `mailto:yellowbricksbh@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      const mailtoLink = `mailto:info@yellowbricksbh.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       
       // Open email client
       window.location.href = mailtoLink;
@@ -615,7 +615,7 @@ ${message}`;
     
     // Copy email to clipboard function
     function copyEmail() {
-      const email = 'yellowbricksbh@gmail.com';
+      const email = 'info@yellowbricksbh.com';
       navigator.clipboard.writeText(email).then(function() {
         // Show a brief success message
         const link = event.target;
